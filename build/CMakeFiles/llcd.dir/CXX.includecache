@@ -22,6 +22,10 @@ hardware/i2c.h
 hardware/pwm.h
 /home/luk/Dokumenty/llcd/include/hardware/pwm.h
 
+/home/luk/Dokumenty/llcd/include/Infrared.hpp
+DEV_Config.hpp
+/home/luk/Dokumenty/llcd/include/DEV_Config.hpp
+
 /home/luk/Dokumenty/llcd/include/LCD_1in14.hpp
 DEV_Config.hpp
 /home/luk/Dokumenty/llcd/include/DEV_Config.hpp
@@ -37,6 +41,8 @@ include/DEV_Config.hpp
 /home/luk/Dokumenty/llcd/include/DEV_Config.hpp
 include/LCD_1in14.hpp
 /home/luk/Dokumenty/llcd/include/LCD_1in14.hpp
+include/Infrared.hpp
+/home/luk/Dokumenty/llcd/include/Infrared.hpp
 llcd.hpp
 /home/luk/Dokumenty/llcd/llcd.hpp
 

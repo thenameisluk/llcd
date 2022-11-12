@@ -26,20 +26,32 @@ namespace llcd{
     constexpr color RGB(uint8_t R,uint8_t G,uint8_t B){
         return (((R & 0b11111000)<<8) + ((G & 0b11111100)<<3) + (B>>3));
     };
+    class buttons{
+        public:
+            buttons();
+            bool isAPressed();
+            bool isBPressed();
+            bool isDownPressed();
+            bool isUpPressed();
+            bool isRightPressed();
+            bool isLeftPressed();
+            bool isCtrlPressed();
+    };
     class ctx{
         public:
             color img[32400] = {c_white};
             ctx(){
 
             }
-            void fillRect(uint16_t x,uint16_t y,uint16_t w,uint16_t h,color c);
-            void drawRect(uint16_t x,uint16_t y,uint16_t w,uint16_t h,color c);
+            void fillRect(int16_t x,int16_t y,int16_t w,int16_t h,color c);
+            void drawRect(int16_t x,int16_t y,int16_t w,int16_t h,color c);
             void fill(color c);
-            void drawPoint(uint16_t x,uint16_t y,color c);
+            void drawPoint(int16_t x,int16_t y,color c);
     };
     class  llcd{
         public:
+            buttons b;
             ctx c;
-            llcd(std::function<void(ctx&)> f);
+            llcd(std::function<void(ctx&,buttons&)> f);
     };
 }

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/llcd.dir/DEV_Config.cpp.obj"
+  "CMakeFiles/llcd.dir/Infrared.cpp.obj"
   "CMakeFiles/llcd.dir/LCD_1in14.cpp.obj"
   "CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj"
   "CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj"

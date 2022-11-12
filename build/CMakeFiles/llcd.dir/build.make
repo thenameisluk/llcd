@@ -115,9 +115,22 @@ CMakeFiles/llcd.dir/LCD_1in14.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/llcd.dir/LCD_1in14.cpp.s"
 	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luk/Dokumenty/llcd/LCD_1in14.cpp -o CMakeFiles/llcd.dir/LCD_1in14.cpp.s
 
+CMakeFiles/llcd.dir/Infrared.cpp.obj: CMakeFiles/llcd.dir/flags.make
+CMakeFiles/llcd.dir/Infrared.cpp.obj: ../Infrared.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/llcd.dir/Infrared.cpp.obj"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/llcd.dir/Infrared.cpp.obj -c /home/luk/Dokumenty/llcd/Infrared.cpp
+
+CMakeFiles/llcd.dir/Infrared.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/llcd.dir/Infrared.cpp.i"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luk/Dokumenty/llcd/Infrared.cpp > CMakeFiles/llcd.dir/Infrared.cpp.i
+
+CMakeFiles/llcd.dir/Infrared.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/llcd.dir/Infrared.cpp.s"
+	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luk/Dokumenty/llcd/Infrared.cpp -o CMakeFiles/llcd.dir/Infrared.cpp.s
+
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i: cmake_force
@@ -130,7 +143,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdli
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i: cmake_force
@@ -143,7 +156,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpi
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i: cmake_force
@@ -156,7 +169,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/cl
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i: cmake_force
@@ -169,7 +182,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/pla
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i: cmake_force
@@ -182,7 +195,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/syn
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i: cmake_force
@@ -195,12 +208,12 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i: cmake_force
@@ -213,7 +226,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s: cm
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i: cmake_force
@@ -226,7 +239,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i: cmake_force
@@ -239,7 +252,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s: c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i: cmake_force
@@ -252,7 +265,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_hel
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i: cmake_force
@@ -265,7 +278,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/ti
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i: cmake_force
@@ -278,7 +291,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i: cmake_force
@@ -291,7 +304,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s: 
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i: cmake_force
@@ -304,7 +317,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s: 
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i: cmake_force
@@ -317,7 +330,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s: 
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj: /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj -c /home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i: cmake_force
@@ -330,7 +343,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_se
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i: cmake_force
@@ -343,12 +356,12 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uar
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i: cmake_force
@@ -361,7 +374,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runt
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i: cmake_force
@@ -374,7 +387,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i: cmake_force
@@ -387,7 +400,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i: cmake_force
@@ -400,7 +413,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vre
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i: cmake_force
@@ -413,7 +426,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i: cmake_force
@@ -426,7 +439,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xos
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i: cmake_force
@@ -439,12 +452,12 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/print
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i: cmake_force
@@ -457,17 +470,17 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/boot
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i: cmake_force
@@ -480,7 +493,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/doubl
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i: cmake_force
@@ -493,22 +506,22 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/doubl
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i: cmake_force
@@ -521,7 +534,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i: cmake_force
@@ -534,12 +547,12 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i: cmake_force
@@ -552,17 +565,17 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building ASM object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
 	/usr/bin/arm-none-eabi-gcc $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj   -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
 	/usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i: cmake_force
@@ -575,7 +588,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_lin
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i: cmake_force
@@ -588,7 +601,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_lin
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i: cmake_force
@@ -601,7 +614,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
@@ -614,7 +627,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/s
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i: cmake_force
@@ -627,7 +640,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i: cmake_force
@@ -640,7 +653,7 @@ CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: CMakeFiles/llcd.dir/flags.make
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj: /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj -c /home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c
 
 CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i: cmake_force
@@ -656,6 +669,7 @@ llcd_OBJECTS = \
 "CMakeFiles/llcd.dir/llcd.cpp.obj" \
 "CMakeFiles/llcd.dir/DEV_Config.cpp.obj" \
 "CMakeFiles/llcd.dir/LCD_1in14.cpp.obj" \
+"CMakeFiles/llcd.dir/Infrared.cpp.obj" \
 "CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" \
 "CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj" \
 "CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj" \
@@ -711,6 +725,7 @@ llcd_EXTERNAL_OBJECTS =
 libllcd.a: CMakeFiles/llcd.dir/llcd.cpp.obj
 libllcd.a: CMakeFiles/llcd.dir/DEV_Config.cpp.obj
 libllcd.a: CMakeFiles/llcd.dir/LCD_1in14.cpp.obj
+libllcd.a: CMakeFiles/llcd.dir/Infrared.cpp.obj
 libllcd.a: CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 libllcd.a: CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 libllcd.a: CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
@@ -761,7 +776,7 @@ libllcd.a: CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardwa
 libllcd.a: CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 libllcd.a: CMakeFiles/llcd.dir/build.make
 libllcd.a: CMakeFiles/llcd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Linking CXX static library libllcd.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luk/Dokumenty/llcd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX static library libllcd.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/llcd.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llcd.dir/link.txt --verbose=$(VERBOSE)
 

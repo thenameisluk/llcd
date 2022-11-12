@@ -1,8 +1,9 @@
 /home/luk/Dokumenty/llcd/build/CMakeFiles/rebuild_cache.dir
+/home/luk/Dokumenty/llcd/build/CMakeFiles/draw_demo.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/edit_cache.dir
+/home/luk/Dokumenty/llcd/build/CMakeFiles/boxes_demo.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/ELF2UF2Build.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/llcd.dir
-/home/luk/Dokumenty/llcd/build/CMakeFiles/llcd_test.dir
 /home/luk/Dokumenty/llcd/build/pico-sdk/CMakeFiles/rebuild_cache.dir
 /home/luk/Dokumenty/llcd/build/pico-sdk/CMakeFiles/edit_cache.dir
 /home/luk/Dokumenty/llcd/build/pico-sdk/tools/CMakeFiles/rebuild_cache.dir
