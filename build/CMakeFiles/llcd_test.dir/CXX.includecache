@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/llcd.hpp
+functional
+-
+
+/home/luk/Dokumenty/llcd/llcd_Test.cpp
+llcd.hpp
+/home/luk/Dokumenty/llcd/llcd.hpp
+

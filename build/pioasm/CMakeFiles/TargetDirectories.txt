@@ -1,0 +1,3 @@
+/home/luk/Dokumenty/llcd/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/luk/Dokumenty/llcd/build/pioasm/CMakeFiles/edit_cache.dir
+/home/luk/Dokumenty/llcd/build/pioasm/CMakeFiles/pioasm.dir
