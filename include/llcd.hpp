@@ -26,6 +26,17 @@ namespace llcd{
     constexpr color RGB(uint8_t R,uint8_t G,uint8_t B){
         return (((R & 0b11111000)<<8) + ((G & 0b11111100)<<3) + (B>>3));
     };
+    /// @brief check if 2d boxes are coliding
+    /// @param sx1 <\ x
+    /// @param sy1 <\ y
+    /// @param ex1 \> x
+    /// @param ey1 \> y
+    /// @param sx2 <\ x
+    /// @param sy2 <\ y
+    /// @param ex2 \> x
+    /// @param ey2 \> y
+    /// @return if colide
+    bool boxColide(int16_t sx1,int16_t sy1,int16_t ex1,int16_t ey1,int16_t sx2,int16_t sy2,int16_t ex2,int16_t ey2);
     class buttons{
         public:
             buttons();
@@ -43,10 +54,52 @@ namespace llcd{
             ctx(){
 
             }
-            void fillRect(int16_t x,int16_t y,int16_t w,int16_t h,color c);
-            void drawRect(int16_t x,int16_t y,int16_t w,int16_t h,color c);
+            /// @brief draws retangle with insides
+            /// @param x x position
+            /// @param y x position
+            /// @param w width
+            /// @param h heigth
+            /// @param c color
+            void fillRect(int16_t x,int16_t y,uint8_t w,uint8_t h,color c);
+            /// @brief draws redtangle without insides
+            /// @param x x position
+            /// @param y y position
+            /// @param w width
+            /// @param h heigth
+            /// @param c color
+            void drawRect(int16_t x,int16_t y,uint8_t w,uint8_t h,color c);
+            /// @brief draws image
+            /// @param img image pointer
+            /// @param x x position
+            /// @param y y position
+            /// @param w width
+            /// @param h heigth
+            /// @param scale how big it will be
+            void drawImage(color* img,int16_t x,int16_t y,uint8_t w,uint8_t h,uint8_t scale = 1);
+            /// @brief fills frame with color
+            /// @param c color
             void fill(color c);
+            /// @brief draws point on frame
+            /// @param x x position
+            /// @param y y position
+            /// @param c color
             void drawPoint(int16_t x,int16_t y,color c);
+            /// @brief draws line from point to point
+            /// @param x start x position
+            /// @param y start y position
+            /// @param dx end x position
+            /// @param dy end y position
+            /// @param c color
+            void drawLine(int16_t x,int16_t y,int16_t dx,int16_t dy,color c);
+            /// @brief draw triangle
+            /// @param x1 position
+            /// @param y1 position
+            /// @param x2 position
+            /// @param y2 position
+            /// @param x3 position
+            /// @param y3 position
+            /// @param c color
+            void drawTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c);
     };
     class  llcd{
         public:

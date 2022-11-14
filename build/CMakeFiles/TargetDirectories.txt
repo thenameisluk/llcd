@@ -1,4 +1,5 @@
 /home/luk/Dokumenty/llcd/build/CMakeFiles/rebuild_cache.dir
+/home/luk/Dokumenty/llcd/build/CMakeFiles/snake_demo.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/draw_demo.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/edit_cache.dir
 /home/luk/Dokumenty/llcd/build/CMakeFiles/boxes_demo.dir

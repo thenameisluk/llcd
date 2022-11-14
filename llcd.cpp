@@ -2,15 +2,12 @@
 #include "include/LCD_1in14.hpp"
 #include "include/Infrared.hpp"
 #include "llcd.hpp"
-/*
 
-
-DEV_Digital_Read(ctrl ) == 0;
-LCD_1IN14_Display();//240,135
-
-
-return 0;
-*/
+//other functions
+bool llcd::boxColide(int16_t sx1,int16_t sy1,int16_t ex1,int16_t ey1,int16_t sx2,int16_t sy2,int16_t ex2,int16_t ey2){
+    //to-do
+    return false;
+};
 //buttons
 llcd::buttons::buttons(){
     //makes buttons clickable or something
@@ -58,27 +55,40 @@ llcd::llcd::llcd(std::function<void(ctx&,buttons&)> f){
     };
     DEV_Module_Exit();
 }
-
-void llcd::ctx::fillRect(int16_t x,int16_t y,int16_t w,int16_t h,color c){
-    for(uint16_t xm =  0;xm<w;xm++){
-        for(uint16_t ym =  0;ym<h;ym++){
-            drawPoint(x+xm,y+ym,c);
+//ctx
+void llcd::ctx::fillRect(int16_t x,int16_t y,uint8_t w,uint8_t h,color c){
+    for(int16_t ix = 0;ix<w;ix++){
+        for(int16_t iy = 0;iy<h;iy++){
+            drawPoint(x+ix,y+iy,c);//maybe faster
         }
     }
-}
-void llcd::ctx::drawRect(int16_t x,int16_t y,int16_t w,int16_t h,color c){
-    for(uint16_t xm =  0;xm<w;xm++){
-        for(uint16_t ym =  0;ym<h;ym++){
-            drawPoint(x+xm,y+ym,c);
-        }
+};
+void llcd::ctx::drawRect(int16_t x,int16_t y,uint8_t w,uint8_t h,color c){
+    for(int16_t i = 0;i<w;i++){
+        drawPoint(x+i,y,c);
+        drawPoint(x+i,y+h-1,c);
     }
-}
-void llcd::ctx::drawPoint(int16_t x,int16_t y,color c){
-    if(x<0||x>240||y<0||y>135)return;
-    img[x+(y*240)] = c;
-}
+    for(int16_t i = 0;i<h;i++){
+        drawPoint(x,y+i,c);
+        drawPoint(x+w-1,y+i,c);
+    }
+};
+void llcd::ctx::drawImage(color* img,int16_t x,int16_t y,uint8_t w,uint8_t h,uint8_t scale){
+    //to-do
+    //3 variants (color+transparent,color,symbol)
+};
 void llcd::ctx::fill(color c){
     for(uint16_t i = 0;i<32400;i++){
         img[i] = c;
     }
-}
+};
+void llcd::ctx::drawPoint(int16_t x,int16_t y,color c){
+    if(x>=lcd_w||x<0||y>=lcd_h||y<0)return;
+    img[x+lcd_w*y] = c;
+};
+void llcd::ctx::drawLine(int16_t x,int16_t y,int16_t dx,int16_t dy,color c){
+    //to-do
+};
+void llcd::ctx::drawTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c){
+    //to-do
+};

@@ -225,6 +225,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/snake_demo.dir/DependInfo.cmake"
   "CMakeFiles/draw_demo.dir/DependInfo.cmake"
   "CMakeFiles/boxes_demo.dir/DependInfo.cmake"
   "CMakeFiles/ELF2UF2Build.dir/DependInfo.cmake"

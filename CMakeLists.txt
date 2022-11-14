@@ -39,3 +39,15 @@ pico_enable_stdio_usb(draw_demo  1)
 pico_enable_stdio_uart(draw_demo  1)
 
 pico_add_extra_outputs(draw_demo )
+
+#drawing snake
+add_executable(snake_demo #add binary
+demo/snake.cpp
+)
+
+target_link_libraries(snake_demo  llcd) #link 
+
+pico_enable_stdio_usb(snake_demo  1)
+pico_enable_stdio_uart(snake_demo  1)
+
+pico_add_extra_outputs(snake_demo )

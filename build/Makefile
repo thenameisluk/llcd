@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named snake_demo
+
+# Build rule for target.
+snake_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 snake_demo
+.PHONY : snake_demo
+
+# fast build rule for target.
+snake_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/build
+.PHONY : snake_demo/fast
+
+#=============================================================================
 # Target rules for targets named draw_demo
 
 # Build rule for target.
@@ -394,12 +407,40 @@ demo/draw.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/demo/draw.cpp.s
 .PHONY : demo/draw.cpp.s
 
+demo/snake.obj: demo/snake.cpp.obj
+
+.PHONY : demo/snake.obj
+
+# target to build an object file
+demo/snake.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/demo/snake.cpp.obj
+.PHONY : demo/snake.cpp.obj
+
+demo/snake.i: demo/snake.cpp.i
+
+.PHONY : demo/snake.i
+
+# target to preprocess a source file
+demo/snake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/demo/snake.cpp.i
+.PHONY : demo/snake.cpp.i
+
+demo/snake.s: demo/snake.cpp.s
+
+.PHONY : demo/snake.s
+
+# target to generate assembly for a file
+demo/snake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/demo/snake.cpp.s
+.PHONY : demo/snake.cpp.s
+
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
@@ -410,6 +451,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i: home/luk
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
@@ -420,6 +462,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s: home/luk
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
@@ -430,6 +473,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
@@ -440,6 +484,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
@@ -450,6 +495,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
@@ -460,6 +506,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj
@@ -470,6 +517,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
@@ -480,6 +528,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
@@ -490,6 +539,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.obj: home/lu
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
@@ -500,6 +550,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.i: home/luk/
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
@@ -510,6 +561,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.s: home/luk/
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
@@ -520,6 +572,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
@@ -530,6 +583,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
@@ -540,6 +594,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
@@ -550,6 +605,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.obj: home/luk
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj
@@ -560,6 +616,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.i: home/luk/D
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
@@ -570,6 +627,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.s: home/luk/D
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
@@ -580,6 +638,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj
@@ -590,6 +649,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
@@ -600,6 +660,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
@@ -610,6 +671,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.obj: home
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
@@ -620,6 +682,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.i: home/l
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
@@ -630,6 +693,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.s: home/l
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
@@ -640,6 +704,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj
@@ -650,6 +715,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
@@ -660,6 +726,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
@@ -670,6 +737,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.obj: home
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
@@ -680,6 +748,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.i: home/l
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
@@ -690,6 +759,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.s: home/l
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
@@ -700,6 +770,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.obj: home
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
@@ -710,6 +781,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.i: home/l
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
@@ -720,6 +792,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.s: home/l
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
@@ -730,6 +803,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.obj: home/l
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj
@@ -740,6 +814,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.i: home/luk
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
@@ -750,6 +825,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.s: home/luk
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
@@ -760,6 +836,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.obj: home/luk/Dokum
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
@@ -770,6 +847,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.i: home/luk/Dokumen
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
@@ -780,6 +858,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.s: home/luk/Dokumen
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
@@ -790,6 +869,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.obj: home/luk/Dokumenty/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
@@ -800,6 +880,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.i: home/luk/Dokumenty/pi
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.i
@@ -810,6 +891,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.s: home/luk/Dokumenty/pi
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd.c.s
@@ -820,6 +902,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
@@ -830,6 +913,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
@@ -840,6 +924,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
@@ -850,6 +935,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp20
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
@@ -860,6 +946,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp20
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
@@ -870,6 +957,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp20
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
@@ -880,6 +968,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_u
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
@@ -890,6 +979,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_u
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
@@ -900,6 +990,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_u
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
@@ -910,6 +1001,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.obj: home/luk/Dokumenty/pico-sd
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.obj
@@ -920,6 +1012,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.i: home/luk/Dokumenty/pico-sdk/
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.i
@@ -930,6 +1023,7 @@ home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.s: home/luk/Dokumenty/pico-sdk/
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/tusb.c.s
@@ -940,6 +1034,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.obj: home/luk/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.obj
@@ -951,6 +1046,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.i: home/luk/Do
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.i
@@ -962,6 +1058,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.s: home/luk/Do
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/critical_section.c.s
@@ -973,6 +1070,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.obj: home/luk/Dokumen
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.obj
@@ -984,6 +1082,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.i: home/luk/Dokumenty
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.i
@@ -995,6 +1094,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.s: home/luk/Dokumenty
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/lock_core.c.s
@@ -1006,6 +1106,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.obj: home/luk/Dokumenty/p
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.obj
@@ -1017,6 +1118,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.i: home/luk/Dokumenty/pic
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.i
@@ -1028,6 +1130,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.s: home/luk/Dokumenty/pic
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/mutex.c.s
@@ -1039,6 +1142,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.obj: home/luk/Dokumenty/pic
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.obj
@@ -1050,6 +1154,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.i: home/luk/Dokumenty/pico-
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.i
@@ -1061,6 +1166,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.s: home/luk/Dokumenty/pico-
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_sync/sem.c.s
@@ -1072,6 +1178,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.obj: home/luk/Dokumenty/pi
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.obj
@@ -1083,6 +1190,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.i: home/luk/Dokumenty/pico
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.i
@@ -1094,6 +1202,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.s: home/luk/Dokumenty/pico
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/time.c.s
@@ -1105,6 +1214,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.obj
@@ -1116,6 +1226,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.i
@@ -1127,6 +1238,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_time/timeout_helper.c.s
@@ -1138,6 +1250,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.obj: home/luk/Dokument
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.obj
@@ -1149,6 +1262,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.i: home/luk/Dokumenty/
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.i
@@ -1160,6 +1274,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.s: home/luk/Dokumenty/
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/datetime.c.s
@@ -1171,6 +1286,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.obj: home/luk/Dokumenty/p
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.obj
@@ -1182,6 +1298,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.i: home/luk/Dokumenty/pic
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.i
@@ -1193,6 +1310,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.s: home/luk/Dokumenty/pic
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/pheap.c.s
@@ -1204,6 +1322,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.obj: home/luk/Dokumenty/p
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.obj
@@ -1215,6 +1334,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.i: home/luk/Dokumenty/pic
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.i
@@ -1226,6 +1346,7 @@ home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.s: home/luk/Dokumenty/pic
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/common/pico_util/queue.c.s
@@ -1237,6 +1358,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
@@ -1248,6 +1370,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.i
@@ -1259,6 +1382,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_adc/adc.c.s
@@ -1270,6 +1394,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
@@ -1281,6 +1406,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
@@ -1292,6 +1418,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
@@ -1303,6 +1430,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/luk/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
@@ -1314,6 +1442,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/luk/Do
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
@@ -1325,6 +1454,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/luk/Do
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
@@ -1336,6 +1466,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/lu
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
@@ -1347,6 +1478,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
@@ -1357,6 +1489,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
@@ -1367,6 +1500,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
@@ -1377,6 +1511,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -1388,6 +1523,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
@@ -1399,6 +1535,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
@@ -1410,6 +1547,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
@@ -1421,6 +1559,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i
@@ -1432,6 +1571,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.s
@@ -1443,6 +1583,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
@@ -1454,6 +1595,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
@@ -1465,6 +1607,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
@@ -1476,6 +1619,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: h
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
@@ -1487,6 +1631,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
@@ -1498,6 +1643,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
@@ -1509,6 +1655,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
@@ -1520,6 +1667,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
@@ -1531,6 +1679,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.i
@@ -1542,6 +1691,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_spi/spi.c.s
@@ -1553,6 +1703,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
@@ -1564,6 +1715,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
@@ -1575,6 +1727,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
@@ -1586,6 +1739,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
@@ -1597,6 +1751,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
@@ -1608,6 +1763,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
@@ -1619,6 +1775,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
@@ -1630,6 +1787,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
@@ -1641,6 +1799,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
@@ -1652,6 +1811,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
@@ -1663,6 +1823,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
@@ -1674,6 +1835,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
@@ -1685,6 +1847,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
@@ -1696,6 +1859,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/lu
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
@@ -1707,6 +1871,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/lu
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
@@ -1718,6 +1883,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
@@ -1729,6 +1895,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
@@ -1740,6 +1907,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
@@ -1751,6 +1919,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
@@ -1762,6 +1931,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
@@ -1773,6 +1943,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
@@ -1784,6 +1955,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
@@ -1795,6 +1967,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
@@ -1806,6 +1979,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/lu
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
@@ -1817,6 +1991,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
@@ -1828,6 +2003,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/l
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
@@ -1839,6 +2015,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/l
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
@@ -1850,6 +2027,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/luk
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
@@ -1861,6 +2039,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.i: home/luk/D
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.i
@@ -1872,6 +2051,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.s: home/luk/D
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_math.c.s
@@ -1883,6 +2063,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: h
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
@@ -1894,6 +2075,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeratio
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
@@ -1904,6 +2086,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeratio
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
@@ -1914,6 +2097,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeratio
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
@@ -1924,6 +2108,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/luk/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
@@ -1935,6 +2120,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/l
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
@@ -1946,6 +2132,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/luk
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
@@ -1957,6 +2144,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/luk
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
@@ -1968,6 +2156,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/luk/D
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
@@ -1979,6 +2168,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.i: home/luk/Dok
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.i
@@ -1990,6 +2180,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.s: home/luk/Dok
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_math.c.s
@@ -2001,6 +2192,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: hom
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
@@ -2012,6 +2204,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.o
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
@@ -2023,6 +2216,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/luk
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
@@ -2034,6 +2228,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/luk/D
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
@@ -2045,6 +2240,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/luk/D
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
@@ -2056,6 +2252,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
@@ -2067,6 +2264,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/luk/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
@@ -2078,6 +2276,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.i: home/luk/Do
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.i
@@ -2089,6 +2288,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.s: home/luk/Do
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_platform/platform.c.s
@@ -2100,6 +2300,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
@@ -2111,6 +2312,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.i
@@ -2122,6 +2324,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_printf/printf.c.s
@@ -2133,6 +2336,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/luk/Do
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
@@ -2144,6 +2348,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/luk/Doku
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
@@ -2155,6 +2360,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/luk/Doku
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
@@ -2166,6 +2372,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: h
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
@@ -2177,6 +2384,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: hom
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
@@ -2188,6 +2396,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: hom
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
@@ -2199,6 +2408,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/luk
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -2210,6 +2420,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: ho
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
@@ -2221,6 +2432,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
@@ -2232,6 +2444,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
@@ -2243,6 +2456,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/luk/Dokume
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
@@ -2254,6 +2468,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/luk/Dokument
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
@@ -2265,6 +2480,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/luk/Dokument
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
@@ -2276,6 +2492,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: home/
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
@@ -2287,6 +2504,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/lu
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
@@ -2298,6 +2516,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/lu
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
@@ -2309,6 +2528,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: h
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
@@ -2319,6 +2539,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i: hom
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i
@@ -2329,6 +2550,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s: hom
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s
@@ -2339,6 +2561,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj: home/lu
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
@@ -2349,6 +2572,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i: home/luk/
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
@@ -2359,6 +2583,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s: home/luk/
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
@@ -2369,6 +2594,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
@@ -2379,6 +2605,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
@@ -2389,6 +2616,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
@@ -2399,6 +2627,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/luk/Doku
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -2410,6 +2639,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/luk/Dokume
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
@@ -2421,6 +2651,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/luk/Dokume
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llcd.dir/build.make CMakeFiles/llcd.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
@@ -2432,6 +2663,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj: home/lu
 
 # target to build an object file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
@@ -2442,6 +2674,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i: home/luk/
 
 # target to preprocess a source file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
@@ -2452,6 +2685,7 @@ home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s: home/luk/
 
 # target to generate assembly for a file
 home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake_demo.dir/build.make CMakeFiles/snake_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/draw_demo.dir/build.make CMakeFiles/draw_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/boxes_demo.dir/build.make CMakeFiles/boxes_demo.dir/home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
 .PHONY : home/luk/Dokumenty/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
@@ -2501,6 +2735,7 @@ help:
 	@echo "... bs2_default"
 	@echo "... draw_demo"
 	@echo "... llcd"
+	@echo "... snake_demo"
 	@echo "... DEV_Config.obj"
 	@echo "... DEV_Config.i"
 	@echo "... DEV_Config.s"
@@ -2516,6 +2751,9 @@ help:
 	@echo "... demo/draw.obj"
 	@echo "... demo/draw.i"
 	@echo "... demo/draw.s"
+	@echo "... demo/snake.obj"
+	@echo "... demo/snake.i"
+	@echo "... demo/snake.s"
 	@echo "... home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/luk/Dokumenty/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
