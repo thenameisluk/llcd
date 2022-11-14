@@ -13,7 +13,7 @@ uint8_t r(uint16_t v){
     return (randon()%v)+1;
 }
 
-uint16_t map[312];//13(h)x24(w)
+int16_t map[312];//13(h)x24(w)
 //starts at 7x12
 uint16_t p(uint8_t x,uint8_t y){
     return x+(y*24);
@@ -34,8 +34,8 @@ void newFruid(){
     uint16_t pp;
     while (true)
     {
-        pp=r(300);
-        if(map[pp]==0&&pp!=head){
+        pp=r(312)-1;
+        if(map[pp]==-1&&pp!=head){
             fruit=pp;
             break;
         }
@@ -58,13 +58,14 @@ bool tick(){
     }
 }
 void reset(){
-    newFruid();
+    
     move = m_up;
     map[p(12,7)]=p(13,7);
     head = p(12,7);
     for(int16_t i = 0;i<312;i++){
-        map[i] = 0;
+        map[i] = -1;
     }
+    newFruid();
     end = false;
 }
 int main(){
@@ -110,28 +111,25 @@ int main(){
                 break;
                 case m_right:
                 if(head%24==23){
-                    next = head-23;
+                    next = head+1-24;
                 }else{
                     next = head+1;
                 }
                 break;
             }
             in = map[head];
-            if(map[next]!=0&&head!=next)end=true;
-            if(move==m_no){
-
-            }else if(next==fruit){
+            if(map[next]!=-1&&head!=next)end=true;
+            if(next==fruit){
                 newFruid();
             }else{
                 
                     for(int16_t il = 0;il<312;il++){
                         if(in==-1){
-
-                        }else if(map[in]!=0&&map[map[in]]==0){
-                            map[in]=0;
-                            in = -1;
+                            break;
+                        }else if(map[in]!=-1&&map[map[in]]==-1){
+                            map[in]=-1;
+                            break;
                         }else{
-                            
                             in = map[in];
                         }
                     }
@@ -147,7 +145,7 @@ int main(){
                 for(uint16_t iy = 0;iy<13;iy++){
                     if(ix+(iy*24)==fruit){
                             c.fillRect((ix*10),(iy*10),10,10,llcd::RGB(0,255,0));
-                    }else if(map[ix+(iy*24)]!=0||ix+(iy*24)==head){
+                    }else if(map[ix+(iy*24)]!=-1||ix+(iy*24)==head){
                             c.fillRect((ix*10)+1,(iy*10)+1,8,8,llcd::RGB(0,0,255));
                     }else{
                         
