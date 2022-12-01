@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "linux-gcc-x64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
+                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pwm/include",
+                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
+                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
+                "${workspaceFolder}/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

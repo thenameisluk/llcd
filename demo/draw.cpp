@@ -16,7 +16,7 @@ bool first = true;
 int main(){
     lcd_h;
     lcd_w;
-    llcd::llcd([](llcd::ctx& c,llcd::buttons& b){
+    llcd::llcd([](llcd::ctx& c,llcd::buttons& b,llcd::audio& a){
         //clears white board
         if(first){
             first = false;

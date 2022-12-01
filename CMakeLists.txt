@@ -8,11 +8,14 @@ include_directories(./include)
 
 add_library(llcd 
 llcd.cpp
+llcd3d.cpp
 DEV_Config.cpp
 LCD_1in14.cpp
 Infrared.cpp
+PicoPwm.cpp
 )
-target_link_libraries(llcd PUBLIC pico_stdlib hardware_spi hardware_i2c hardware_pwm hardware_adc)
+
+target_link_libraries(llcd PUBLIC pico_stdlib hardware_spi hardware_i2c hardware_pwm hardware_adc hardware_clocks hardware_pio)
 
 
 #boxes demo
@@ -23,7 +26,7 @@ demo/boxes.cpp
 target_link_libraries(boxes_demo  llcd)
 
 pico_enable_stdio_usb(boxes_demo  1)
-pico_enable_stdio_uart(boxes_demo  1)
+pico_enable_stdio_uart(boxes_demo  0)
 
 pico_add_extra_outputs(boxes_demo )
 
@@ -36,7 +39,7 @@ demo/draw.cpp
 target_link_libraries(draw_demo  llcd) #link 
 
 pico_enable_stdio_usb(draw_demo  1)
-pico_enable_stdio_uart(draw_demo  1)
+pico_enable_stdio_uart(draw_demo  0)
 
 pico_add_extra_outputs(draw_demo )
 
@@ -48,6 +51,18 @@ demo/snake.cpp
 target_link_libraries(snake_demo  llcd) #link 
 
 pico_enable_stdio_usb(snake_demo  1)
-pico_enable_stdio_uart(snake_demo  1)
+pico_enable_stdio_uart(snake_demo  0)
 
 pico_add_extra_outputs(snake_demo )
+
+#drawing 3d
+add_executable(3d_demo #add binary
+demo/3d.cpp
+)
+
+target_link_libraries(3d_demo  llcd) #link 
+
+pico_enable_stdio_usb(3d_demo  1)
+pico_enable_stdio_uart(3d_demo  0)
+
+pico_add_extra_outputs(3d_demo )

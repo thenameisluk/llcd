@@ -47,12 +47,9 @@ CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 
-//Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=ON
-
-//C++ compiler
+//No help, variable specified on the command line.
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/arm-none-eabi-g++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
@@ -78,7 +75,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//C compiler
+//No help, variable specified on the command line.
 CMAKE_C_COMPILER:FILEPATH=/usr/bin/arm-none-eabi-gcc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
@@ -131,8 +128,8 @@ CMAKE_INSTALL_PREFIX:PATH=/usr/local
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/arm-none-eabi-ld
 
-//Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/gmake
+//Program used to build from build.ninja files.
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/ninja
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -339,8 +336,6 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=18
 //Patch version of cmake used to create the current loaded cache
 CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
-//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
-CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 //Path to cpack program executable.
@@ -396,7 +391,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=Ninja
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.
@@ -477,7 +472,7 @@ PICO_BOOT_STAGE2_DIR:INTERNAL=/home/luk/Dokumenty/pico-sdk/src/rp2_common/boot_s
 PICO_CMAKE_PRELOAD_PLATFORM_DIR:INTERNAL=/home/luk/Dokumenty/pico-sdk/cmake/preload/platforms
 PICO_CMAKE_PRELOAD_PLATFORM_FILE:INTERNAL=/home/luk/Dokumenty/pico-sdk/cmake/preload/platforms/rp2040.cmake
 PICO_COMPILER_ASM:INTERNAL=/usr/bin/arm-none-eabi-gcc
-PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs
+PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs /home/luk/Dokumenty/pico-sdk/src/rp2_common/cmsis /home/luk/Dokumenty/pico-sdk/src/rp2040/hardware_regs
 PICO_DOXYGEN_PATHS:INTERNAL= /home/luk/Dokumenty/pico-sdk/src/common /home/luk/Dokumenty/pico-sdk/lib/cyw43-driver/src /home/luk/Dokumenty/pico-sdk/src/rp2_common /home/luk/Dokumenty/pico-sdk/src/rp2040
 PICO_NO_HARDWARE:INTERNAL=0
 PICO_ON_DEVICE:INTERNAL=1

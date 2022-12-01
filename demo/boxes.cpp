@@ -52,7 +52,7 @@ int main(){
     for(uint8_t i = 0;i<75;i++){
         boxes[i].set(r(lcd_w-30),r(lcd_h-30),r(25)+5,r(25)+5,r(3),r(3),llcd::RGB(r(254),r(254),r(254)));
     }
-    llcd::llcd([](llcd::ctx& c,llcd::buttons& b){
+    llcd::llcd([](llcd::ctx& c,llcd::buttons& b,llcd::audio& a){
         c.fill(c_black);
         for(uint8_t i = 0;i<75;i++){
             c.drawRect(boxes[i].x,boxes[i].y,boxes[i].w,boxes[i].h,boxes[i].c);

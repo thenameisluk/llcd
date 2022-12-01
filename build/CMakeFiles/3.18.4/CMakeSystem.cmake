@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.10.0-19-amd64")
+set(CMAKE_HOST_SYSTEM "Linux-5.10.0-18-amd64")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.10.0-19-amd64")
+set(CMAKE_HOST_SYSTEM_VERSION "5.10.0-18-amd64")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/luk/Dokumenty/pico-sdk/cmake/preload/toolchains/pico_arm_gcc.cmake")

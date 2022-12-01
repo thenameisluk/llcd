@@ -1,13 +1,18 @@
 #pragma once
 #include <functional>
+#include <vector>
+#include <stdio.h>
+#include "picopwm.hpp"
+#include  "llcd3D.hpp"
+#include "notes.hpp"
 //buttons (to-do)
-#define keyA 15
-#define keyB 17
-#define up 2
-#define dowm 18
-#define left 16
-#define right 20
-#define ctrl 3
+#define b_A 15
+#define b_B 17
+#define b_up 2
+#define b_dowm 18
+#define b_left 16
+#define b_right 20
+#define b_ctrl 3
 //size of screen
 #define lcd_h 135
 #define lcd_w 240
@@ -16,15 +21,72 @@
 #define c_white 65535
 //help types
 typedef uint16_t color;
+//swap
+#define swap(a, b) { int16_t t; t = a; a = b; b = t;}
+//notes
+#define n_C 0
+#define n_Ch 1
+#define n_D 2
+#define n_Dh 3
+#define n_E 4
+#define n_F 5
+#define n_Fh 6
+#define n_G 7
+#define n_Gh 8
+#define n_A 9
+#define n_Ah 10
+#define n_B 11
+
+extern uint32_t note_list[12][9];
+
 
 namespace llcd{
+    class symbol{
+        //to-do
+    };
+    class image{
+        //to-do 
+    };
+    class sprite{
+        //to-do 
+    };
+    //note
+    class note{
+        public:
+            uint8_t n;
+            uint8_t s;
+            note(char n[2]);
+            note(uint8_t note=1,uint8_t scale=3);
+            uint32_t getFreqency();
+    };
+    //audio
+    class audio{
+        public:
+            PicoPwm audio_pin;
+            audio();
+            void set(std::vector<note> nodes,uint16_t tempo=8,uint8_t scaleT=4,uint8_t ScaleB=3);
+            void tick();
+            void play(note n);
+            void resume();
+            void stop();
+            void stopPlaying();
+            uint16_t t = 0;
+            uint8_t on  = 0;
+            uint16_t ont = 0;
+            uint8_t scaleTop = 0;
+            uint8_t ScaleBottom = 0;
+            bool setn = false;
+            bool playing = false;
+            uint8_t tempo = 4;
+            std::vector<note> notes;
+    };
     /// @brief turns rgb to color
     /// @param R from 0 to 255
     /// @param G from 0 to 255
     /// @param B from 0 to 255
     /// @return color
     constexpr color RGB(uint8_t R,uint8_t G,uint8_t B){
-        return (((R & 0b11111000)<<8) + ((G & 0b11111100)<<3) + (B>>3));
+        return (((B & 0b11111000)<<8) + ((R & 0b11111100)<<3) + (G>>3));
     };
     /// @brief check if 2d boxes are coliding
     /// @param sx1 <\ x
@@ -90,7 +152,18 @@ namespace llcd{
             /// @param dx end x position
             /// @param dy end y position
             /// @param c color
-            void drawLine(int16_t x,int16_t y,int16_t dx,int16_t dy,color c);
+            void drawLine(point2d p1,point2d p2,color c);
+            void drawLine(int16_t x1,int16_t y1,int16_t x2,int16_t d2,color c);
+            /// @brief draws straight line
+            /// @param x position x
+            /// @param y position y
+            /// @param l lenght
+            void drawLineUpDown(int16_t x,int16_t y,int16_t l);
+            /// @brief draws straight line
+            /// @param x position x
+            /// @param y position y
+            /// @param l lenght
+            void drawLineLeftRight(int16_t x,int16_t y,int16_t l);
             /// @brief draw triangle
             /// @param x1 position
             /// @param y1 position
@@ -100,11 +173,21 @@ namespace llcd{
             /// @param y3 position
             /// @param c color
             void drawTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c);
+            /// @brief draw triangle with insides
+            /// @param x1 position
+            /// @param y1 position
+            /// @param x2 position
+            /// @param y2 position
+            /// @param x3 position
+            /// @param y3 position
+            /// @param c color
+            void fillTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c);
     };
     class  llcd{
         public:
             buttons b;
             ctx c;
-            llcd(std::function<void(ctx&,buttons&)> f);
+            audio a;
+            llcd(std::function<void(ctx&,buttons&,audio&)> f);
     };
 }

@@ -73,7 +73,7 @@ int main(){
     lcd_w;//48 - 24
     // 130-135 not use
     reset();
-    llcd::llcd([](llcd::ctx& c,llcd::buttons& b){
+    llcd::llcd([](llcd::ctx& c,llcd::buttons& b,llcd::audio& a){
         if(b.isAPressed()||b.isBPressed()){
             //reset
             reset();
@@ -144,14 +144,15 @@ int main(){
             for(uint16_t ix = 0;ix<24;ix++){
                 for(uint16_t iy = 0;iy<13;iy++){
                     if(ix+(iy*24)==fruit){
-                            c.fillRect((ix*10),(iy*10),10,10,llcd::RGB(0,255,0));
+                            c.fillRect((ix*10),(iy*10),10,10,llcd::RGB(255,0,0));
                     }else if(map[ix+(iy*24)]!=-1||ix+(iy*24)==head){
-                            c.fillRect((ix*10)+1,(iy*10)+1,8,8,llcd::RGB(0,0,255));
+                            c.fillRect((ix*10)+1,(iy*10)+1,8,8,llcd::RGB(0,255,00));
                     }else{
                         
                     }
                 }
             }
+            //c.drawTriangle(10,10,20,10,35,40,llcd::RGB(0,0,255));
             
         }
         
