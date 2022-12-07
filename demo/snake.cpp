@@ -20,7 +20,7 @@ uint16_t p(uint8_t x,uint8_t y){
 }
 uint16_t head = p(12,7);
 uint16_t next = p(12,7);
-uint16_t in = 0;
+int16_t in = 0;
 uint16_t l = 1;
 uint16_t fruit = 0;
 bool end = false;
@@ -66,6 +66,7 @@ void reset(){
         map[i] = -1;
     }
     newFruid();
+    in = 25;
     end = false;
 }
 int main(){

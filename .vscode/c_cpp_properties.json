@@ -4,11 +4,9 @@
             "name": "linux-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
-                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_pwm/include",
-                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
-                "/home/luk/Dokumenty/pico-sdk/src/rp2_common/hardware_clocks/include",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/libs/sfml/include/*",
+                "${workspaceFolder}/include/other"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

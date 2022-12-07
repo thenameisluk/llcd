@@ -49,7 +49,9 @@ bool first = true;
 int main(){
     lcd_h;//26(27) - 13
     lcd_w;//48 - 24
+    #ifdef foo
     stdio_init_all();
+    #endif
     llcd::llcd([](llcd::ctx& c,llcd::buttons& b,llcd::audio& a){
         if(first){
             first=false;

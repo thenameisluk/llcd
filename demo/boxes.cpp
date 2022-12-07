@@ -55,7 +55,8 @@ int main(){
     llcd::llcd([](llcd::ctx& c,llcd::buttons& b,llcd::audio& a){
         c.fill(c_black);
         for(uint8_t i = 0;i<75;i++){
-            c.drawRect(boxes[i].x,boxes[i].y,boxes[i].w,boxes[i].h,boxes[i].c);
+            c.fillRect(boxes[i].x,boxes[i].y,boxes[i].w,boxes[i].h,boxes[i].c);
+
             if(!b.isBPressed())boxes[i].move();
         }
     });

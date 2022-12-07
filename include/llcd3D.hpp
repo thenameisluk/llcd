@@ -2,8 +2,18 @@
 #include <vector>
 #include <cmath>
 #include "stdio.h"
+
+#ifdef foo
+#else
+typedef u_int8_t uint8_t;
+typedef u_int16_t uint16_t;
+typedef u_int32_t uint32_t;
+#endif
+
 #define lcd_h 135
 #define lcd_w 240
+
+
 
 namespace llcd{
     

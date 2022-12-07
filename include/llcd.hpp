@@ -1,8 +1,9 @@
 #pragma once
+#include "picopwm.hpp"
+
 #include <functional>
 #include <vector>
 #include <stdio.h>
-#include "picopwm.hpp"
 #include  "llcd3D.hpp"
 #include "notes.hpp"
 //buttons (to-do)
@@ -20,6 +21,13 @@
 #define c_black 0
 #define c_white 65535
 //help types
+#ifdef foo
+#else
+typedef u_int8_t uint8_t;
+typedef u_int16_t uint16_t;
+typedef u_int32_t uint32_t;
+#endif
+
 typedef uint16_t color;
 //swap
 #define swap(a, b) { int16_t t; t = a; a = b; b = t;}
@@ -36,6 +44,8 @@ typedef uint16_t color;
 #define n_A 9
 #define n_Ah 10
 #define n_B 11
+
+
 
 extern uint32_t note_list[12][9];
 
