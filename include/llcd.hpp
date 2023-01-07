@@ -28,9 +28,11 @@ typedef u_int16_t uint16_t;
 typedef u_int32_t uint32_t;
 #endif
 
+typedef u_int16_t* sprite;
+
 typedef uint16_t color;
-//swap
-#define swap(a, b) { int16_t t; t = a; a = b; b = t;}
+//swap_int
+#define swap_int(a, b) { int16_t t; t = a; a = b; b = t;}
 //notes
 #define n_C 0
 #define n_Ch 1
@@ -49,15 +51,21 @@ typedef uint16_t color;
 
 extern uint32_t note_list[12][9];
 
+typedef struct { unsigned v1 : 4;unsigned v2 : 4; } uint4;
 
 namespace llcd{
     class symbol{
-        //to-do
+        public:
+            bool *arr;
+            int16_t w;
+            int16_t h;
+            symbol(std::initializer_list<bool> array,int16_t s_w,int16_t s_h);
+            symbol(std::initializer_list<std::initializer_list<bool>> array);
+            symbol(const symbol& b);
+            ~symbol();
+            bool operator[](int index);
     };
     class image{
-        //to-do 
-    };
-    class sprite{
         //to-do 
     };
     //note
@@ -192,6 +200,69 @@ namespace llcd{
             /// @param y3 position
             /// @param c color
             void fillTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c);
+			/**
+			 * Draws a letter on the screen.
+			 * 
+			 * @param ch The character to draw.
+			 * @param x The x-coordinate of the top-left corner of the letter.
+			 * @param y The y-coordinate of the top-left corner of the letter.
+			 * @param c The color of the letter.
+			 * @param scale The size of the letter. Defaults to 1.
+			 */
+			void drawLetter(char ch,int16_t x,int16_t y,color c,int16_t scale=1);
+			/**
+			 * Draws a letter on the screen with the given parameters
+			 * @param id The ID of the letter to be drawn
+			 * @param x The x-coordinate of the letter
+			 * @param y The y-coordinate of the letter
+			 * @param c The color of the letter
+			 * @param scale The scale of the letter (default is 1)
+			 */
+            void drawLetter(uint8_t id,int16_t x,int16_t y,color c,int16_t scale=1);
+            /**
+             * @brief Draws a sprite at the given coordinates
+             * 
+             * @param x The x coordinate of the sprite
+             * @param y The y coordinate of the sprite
+             * @param sprite A pointer to the sprite data
+             */
+            void drawSprite(int16_t x,int16_t y,void* sprite);
+            /**
+             * @brief Draws a sprite on the screen
+             * 
+             * @param x The x coordinate of the sprite
+             * @param y The y coordinate of the sprite
+             * @param height The height of the sprite
+             * @param width The width of the sprite
+             * @param pallet The color pallet of the sprite
+             * @param pixels The pixel data of the sprite
+             */
+            void drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels);
+            /**
+             * @brief Draws a sprite at the given coordinates
+             * 
+             * @param x The x coordinate of the sprite
+             * @param y The y coordinate of the sprite
+             * @param sprite A pointer to the sprite to be drawn
+             * @param scale The scale of the sprite
+             */
+            void drawSprite(int16_t x,int16_t y,void* sprite,uint8_t scale);
+            /**
+             * @brief Draws a sprite on the screen
+             * 
+             * @param x The x coordinate of the sprite
+             * @param y The y coordinate of the sprite
+             * @param height The height of the sprite
+             * @param width The width of the sprite
+             * @param pallet The color palette used for the sprite
+             * @param pixels The pixel data for the sprite
+             * @param scale The scale of the sprite
+             */
+            void drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels,uint8_t scale);
+
+
+
+
     };
     class  llcd{
         public:

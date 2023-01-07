@@ -79,7 +79,7 @@ PicoPwm::PicoPwm(u_int8_t pin) {
 PicoPwm::~PicoPwm() { this->stop(); }
 
 void PicoPwm::setFrequency(u_int32_t freq) {
-    toot(freq,10);
+    toot(freq,65);
 }
 
 void PicoPwm::setDuty(u_int32_t duty) {

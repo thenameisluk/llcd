@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 
+
 if(0)#pico build
 add_definitions(-Dfoo)
 include(pico_sdk_import.cmake)
@@ -13,6 +14,7 @@ include_directories(./include/pico)
 
 add_library(llcd 
 src/llcd.cpp
+src/asci.cpp
 src/llcd3d.cpp
 src/pico/DEV_Config.cpp
 src/pico/LCD_1in14.cpp
@@ -50,7 +52,7 @@ add_subdirectory(libs/sfml/)
 include_directories(./include)
 include_directories(./include/other)
 
-add_library(llcd src/llcd.cpp src/llcd3d.cpp src/PicoPwm.cpp src/other/toot.cpp)
+add_library(llcd src/llcd.cpp src/asci.cpp src/llcd3d.cpp src/PicoPwm.cpp src/other/toot.cpp)
 target_link_libraries(llcd PUBLIC sfml-graphics sfml-window sfml-system)
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
@@ -72,3 +74,5 @@ buildLlcd(boxes)
 buildLlcd(draw)
 buildLlcd(snake)
 buildLlcd(3d)
+buildLlcd(sprite)
+

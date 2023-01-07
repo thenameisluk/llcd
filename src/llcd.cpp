@@ -14,6 +14,7 @@
 #include "SFML/Graphics.hpp"
 #endif
 #include "llcd.hpp"
+#include "asci.hpp"
 
 #ifdef foo
 #else
@@ -195,7 +196,7 @@ llcd::llcd::llcd(std::function<void(ctx&,buttons&,audio&)> f){
         while (window.pollEvent(event)) {
             //exit
             if (event.type == sf::Event::Closed)
-                abort();
+                return;
             
         }
         //converting colors
@@ -250,8 +251,8 @@ void llcd::ctx::drawLine(int16_t x1,int16_t y1,int16_t x2,int16_t y2,color c){
     int16_t dy = y2-y1;
     if(abs(dx)<abs(dy)){
         if(x1>x2){
-            swap(x1,x2);
-            swap(y1,y2);
+            swap_int(x1,x2);
+            swap_int(y1,y2);
         }
         dx = x2-x1;
         dy = y2-y1;
@@ -270,8 +271,8 @@ void llcd::ctx::drawLine(int16_t x1,int16_t y1,int16_t x2,int16_t y2,color c){
         
     }else{
         if(y1>y2){
-            swap(x1,x2);
-            swap(y1,y2);
+            swap_int(x1,x2);
+            swap_int(y1,y2);
         }
         dx = x2-x1;
         dy = y2-y1;
@@ -298,4 +299,100 @@ void llcd::ctx::drawTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t
 };
 void llcd::ctx::fillTriangle(int16_t x1,int16_t y1,int16_t x2,int16_t y2,int16_t x3,int16_t y3,color c){
     //to-do
+};
+void llcd::ctx::drawLetter(char ch,int16_t x,int16_t y,color c,int16_t scale){
+    drawLetter((uint8_t)getChar(ch),x,y,c,scale);
+};
+void llcd::ctx::drawLetter(uint8_t id,int16_t x,int16_t y,color c,int16_t scale){
+    for(int width = 0;width<5;width++){
+        for(int height = 0;height<5;height++){
+            if(letters[id][height][width]){
+                for(int scale_w = 0;scale_w<scale;scale_w++){
+                    for(int scale_h = 0;scale_h<scale;scale_h++){
+                        drawPoint(x+(width*scale)+scale_w,y+(height*scale)+scale_h,c);
+                    }
+                }
+            }
+            
+        }
+    }
+};
+void llcd::ctx::drawSprite(int16_t x,int16_t y,void* sprite){
+    uint16_t height = ((uint16_t*)sprite)[0];
+    uint16_t width = ((uint16_t*)sprite)[1];
+    uint16_t* pallet = &(((uint16_t*)sprite)[2]);
+    void* pixels =  (void*)(&(((uint16_t*)sprite)[17]));
+    drawSprite(x,y,height,width,pallet,pixels);
+
+};
+void llcd::ctx::drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels){
+    //printf("%d \n",height);
+    //printf("%d \n",width);
+    uint8_t* pixel = (uint8_t*)pixels;
+    uint8_t value;
+    uint32_t p = 0;
+    bool sof = false;
+    for(int16_t iy = 0;iy<height;iy++){
+        for(int16_t ix = 0;ix<width;ix++){
+            //uint8 00010001 <<4 >>4
+            if(sof){//second
+                value = ((pixel[p])&0x0F);
+                sof=false;
+                p++;
+            }else{//first
+                value = (pixel[p])>>4;
+                sof=true;
+            }
+            //pixels[ix+iy].v << "\n";
+            if(value==0){}
+            else{
+                drawPoint(x+ix,y+iy,pallet[value-1]);
+                
+            }
+            //printf("%d",value);
+        }
+        //printf("\n");
+    }
+};
+void llcd::ctx::drawSprite(int16_t x,int16_t y,void* sprite,uint8_t scale){
+    uint16_t height = ((uint16_t*)sprite)[0];
+    uint16_t width = ((uint16_t*)sprite)[1];
+    uint16_t* pallet = &(((uint16_t*)sprite)[2]);
+    void* pixels =  (void*)(&(((uint16_t*)sprite)[17]));
+    drawSprite(x,y,height,width,pallet,pixels,scale);
+
+};
+void llcd::ctx::drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels,uint8_t scale){
+    //printf("%d \n",height);
+    //printf("%d \n",width);
+    uint8_t* pixel = (uint8_t*)pixels;
+    uint8_t value;
+    uint32_t p = 0;
+    bool sof = false;
+    for(int16_t iy = 0;iy<height;iy++){
+        for(int16_t ix = 0;ix<width;ix++){
+            //uint8 00010001 <<4 >>4
+            if(sof){//second
+                value = ((pixel[p])&0x0F);
+                sof=false;
+                p++;
+            }else{//first
+                value = (pixel[p])>>4;
+                sof=true;
+            }
+            //pixels[ix+iy].v << "\n";
+            if(value==0){}
+            else{
+                for(uint8_t ix2=0;ix2<scale;ix2++){
+                    for(uint8_t iy2=0;iy2<scale;iy2++){
+                        drawPoint(x+(ix*scale)+ix2,y+(iy*scale)+iy2,pallet[value-1]);
+                    }
+                }
+                
+                
+            }
+            //printf("%d",value);
+        }
+        //printf("\n");
+    }
 };
