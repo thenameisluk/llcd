@@ -354,15 +354,21 @@ void llcd::ctx::drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,ui
         //printf("\n");
     }
 };
-void llcd::ctx::drawSprite(int16_t x,int16_t y,void* sprite,uint8_t scale){
+void llcd::ctx::drawSprite(int16_t x,int16_t y,uint8_t* sprite,uint8_t scale){
     uint16_t height = ((uint16_t*)sprite)[0];
     uint16_t width = ((uint16_t*)sprite)[1];
     uint16_t* pallet = &(((uint16_t*)sprite)[2]);
-    void* pixels =  (void*)(&(((uint16_t*)sprite)[17]));
+    uint8_t* pixels =  (uint8_t*)(&(((uint16_t*)sprite)[17]));
     drawSprite(x,y,height,width,pallet,pixels,scale);
 
 };
-void llcd::ctx::drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels,uint8_t scale){
+void llcd::ctx::drawSprite(int16_t x,int16_t y,uint8_t* sprite,uint8_t* pallet,uint8_t scale){
+    uint16_t height = ((uint16_t*)sprite)[0];
+    uint16_t width = ((uint16_t*)sprite)[1];
+    uint8_t* pixels =  (uint8_t*)(&(((uint16_t*)sprite)[2]));
+    drawSprite(x,y,height,width,((uint16_t*)pallet),pixels,scale);
+};
+void llcd::ctx::drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,uint8_t* pixels,uint8_t scale){
     //printf("%d \n",height);
     //printf("%d \n",width);
     uint8_t* pixel = (uint8_t*)pixels;

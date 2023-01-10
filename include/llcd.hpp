@@ -48,7 +48,6 @@ typedef uint16_t color;
 #define n_B 11
 
 
-
 extern uint32_t note_list[12][9];
 
 typedef struct { unsigned v1 : 4;unsigned v2 : 4; } uint4;
@@ -246,7 +245,17 @@ namespace llcd{
              * @param sprite A pointer to the sprite to be drawn
              * @param scale The scale of the sprite
              */
-            void drawSprite(int16_t x,int16_t y,void* sprite,uint8_t scale);
+            void drawSprite(int16_t x,int16_t y,uint8_t* sprite,uint8_t scale);
+            /**
+             * @brief Draws a sprite on the screen
+             * 
+             * @param x The x coordinate of the sprite
+             * @param y The y coordinate of the sprite
+             * @param sprite Pointer to the sprite data
+             * @param pallet Pointer to the pallet data
+             * @param scale Scale of the sprite
+             */
+            void drawSprite(int16_t x,int16_t y,uint8_t* sprite,uint8_t* pallet,uint8_t scale);
             /**
              * @brief Draws a sprite on the screen
              * 
@@ -258,7 +267,7 @@ namespace llcd{
              * @param pixels The pixel data for the sprite
              * @param scale The scale of the sprite
              */
-            void drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,void* pixels,uint8_t scale);
+            void drawSprite(int16_t x,int16_t y,uint16_t height,uint16_t width,uint16_t* pallet,uint8_t* pixels,uint8_t scale);
 
 
 
