@@ -1,5 +1,5 @@
 # llcd
-c++ drivers wrapper for waveshare 1.14 lcd for pi pico + demo
+c++ wrapper/drivers for sfml/waveshare 1.14 lcd for pi pico + demo
 
 Test 1
 
