@@ -8,7 +8,9 @@
                 "${workspaceFolder}/libs/sfml/include/*",
                 "${workspaceFolder}/include/other",
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/include/other"
+                "${workspaceFolder}/include/other",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

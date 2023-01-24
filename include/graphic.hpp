@@ -14,7 +14,14 @@ without premission but if
 you want you can modify code
 itself so yes
 */
-
 #pragma once
+#include "ctx.hpp"
 
-//to-do
+namespace llcd{
+    namespace video{
+        void initVideo(int height, int width,const char* name);
+        void emitVideo(ctx& pixels);
+        void deinitVideo();
+    }
+}
+

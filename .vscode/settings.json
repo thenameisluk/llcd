@@ -50,7 +50,16 @@
     "ctime": "cpp",
     "map": "cpp",
     "set": "cpp",
-    "compare": "cpp"
+    "compare": "cpp",
+    "bit": "cpp",
+    "chrono": "cpp",
+    "concepts": "cpp",
+    "ratio": "cpp",
+    "ranges": "cpp",
+    "__nullptr": "cpp",
+    "span": "cpp",
+    "bitset": "cpp",
+    "thread": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",

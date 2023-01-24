@@ -1,0 +1,9 @@
+1. llcd - main class
+2. llcd 3D - 3d graphic stuff (later)
+3. ctx - container of pixels
+4. audio - note playing
+5. objects - wektor2D, wektor3D, wektor4D, colider, sprite, object
+6. input - keyboard/buttons
+7. data - rle and other stuff decoder
+8. storage - storage api
+9, network - webSocket c/s,http c

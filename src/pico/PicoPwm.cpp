@@ -2,9 +2,6 @@
 // based on https://github.com/micropython/micropython/blob/master/ports/rp2/machine_pwm.c
 #include "picopwm.hpp"
 
-
-#ifdef foo //pi pico
-
 PicoPwm::PicoPwm(uint8_t pin) {
     this->pin = pin;
     this->slice_num = pwm_gpio_to_slice_num(this->pin);
@@ -68,33 +65,3 @@ void PicoPwm::stop() { pwm_set_enabled(this->slice_num, false); }
 uint8_t PicoPwm::getPin() { return this->pin; }
 uint8_t PicoPwm::getSlice() { return this->slice_num; }
 uint8_t PicoPwm::getChannel() { return this->channel; }
-#else
-#include "stdlib.h"
-#include "toot.h"
-
-PicoPwm::PicoPwm(u_int8_t pin) {
-    
-}
-
-PicoPwm::~PicoPwm() { this->stop(); }
-
-void PicoPwm::setFrequency(u_int32_t freq) {
-    toot(freq,65);
-}
-
-void PicoPwm::setDuty(u_int32_t duty) {
-    
-}
-
-void PicoPwm::setDutyPercentage(u_int8_t percentage) {
-    
-}
-
-void PicoPwm::setInverted(bool inverted_a, bool inverted_b) {  }
-
-void PicoPwm::stop() { }
-
-u_int8_t PicoPwm::getPin() { return this->pin; }
-u_int8_t PicoPwm::getSlice() { return this->slice_num; }
-u_int8_t PicoPwm::getChannel() { return this->channel; }
-#endif

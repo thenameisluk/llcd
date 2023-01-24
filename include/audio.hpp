@@ -15,6 +15,18 @@ you want you can modify code
 itself so yes
 */
 
-#pragma once
 
-//to-do
+#pragma once
+#include <stdint.h>
+
+namespace llcd{
+    namespace audio{
+        class audio{
+            public:
+                bool works;
+                audio();
+                ~audio();
+                void play(int note,int scale,int volume = 100);
+        };
+    }
+}

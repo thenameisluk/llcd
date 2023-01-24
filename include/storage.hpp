@@ -15,6 +15,4 @@ you want you can modify code
 itself so yes
 */
 
-#pragma once
-
 //to-do

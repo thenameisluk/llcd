@@ -1,78 +1,78 @@
 cmake_minimum_required(VERSION 3.12)
-
-
-
-if(0)#pico build
-add_definitions(-Dfoo)
-include(pico_sdk_import.cmake)
 project(llcd)
-pico_sdk_init()
 
+#include(pico_sdk_import.cmake)
+#project(llcd)
+#pico_sdk_init()
 
-include_directories(./include)
-include_directories(./include/pico)
+#add_library(llcd 
+#src/llcd.cpp
+#src/asci.cpp
+#src/llcd3d.cpp
+#src/pico/DEV_Config.cpp
+#src/pico/LCD_1in14.cpp
+#src/pico/Infrared.cpp
+#src/PicoPwm.cpp
+#)
 
-add_library(llcd 
-src/llcd.cpp
-src/asci.cpp
-src/llcd3d.cpp
-src/pico/DEV_Config.cpp
-src/pico/LCD_1in14.cpp
-src/pico/Infrared.cpp
-src/PicoPwm.cpp
-)
+#target_link_libraries(llcd PUBLIC pico_stdlib hardware_spi hardware_i2c hardware_pwm hardware_adc hardware_clocks hardware_pio)
+#target_link_libraries(${X}_demo  llcd)
+#
+#pico_enable_stdio_usb(${X}_demo  1)
+#pico_enable_stdio_uart(${X}_demo  0)
+#
+#pico_add_extra_outputs(${X}_demo )
+#include_directories(./include/other)
 
-target_link_libraries(llcd PUBLIC pico_stdlib hardware_spi hardware_i2c hardware_pwm hardware_adc hardware_clocks hardware_pio)
-
-
-function(buildLlcd X)#${X}
-    add_executable(${X}_demo 
-    demo/${X}.cpp
-    )
-
-    target_link_libraries(${X}_demo  llcd)
-
-    pico_enable_stdio_usb(${X}_demo  1)
-    pico_enable_stdio_uart(${X}_demo  0)
-
-    pico_add_extra_outputs(${X}_demo )
-endfunction()
-
-else()#other
-project(llcd VERSION 1.0)
-set(CMAKE_CXX_STANDARD 17)
-
-set(A boxes)
-set(B draw)
-set(C snake)
-set(D 3d)
+set(SFML_STATIC_LIBRARIES TRUE)
 
 add_subdirectory(libs/sfml/)
 
-include_directories(./include)
-include_directories(./include/other)
+include_directories(include/)
 
-add_library(llcd src/llcd.cpp src/asci.cpp src/llcd3d.cpp src/PicoPwm.cpp src/other/toot.cpp)
+set(llcd_common
+    src/ctx.cpp 
+    src/llcd.cpp
+    src/data.cpp
+    src/scenes.cpp
+    src/objects.cpp
+)
+
+
+
+if(0)#picd
+
+#include(pico_sdk_import.cmake)
+#pico_sdk_init()
+
+include_directories(include/pico/)
+
+add_library(llcd STATIC 
+    ${llcd_common}
+    #platform specyfic 
+    src/pico/DEV_Config.cpp
+    src/pico/Infrared.cpp
+    src/pico/LCD_1in14.cpp
+    src/pico/PicoPwm.cpp
+    src/pico/graphic.cpp
+)
+
+#target_link_libraries(llcd PUBLIC pico_stdlib hardware_spi hardware_i2c hardware_pwm hardware_adc hardware_clocks hardware_pio)
+
+else()
+add_library(llcd STATIC 
+    ${llcd_common}
+    #platform specyfic 
+    src/desktop/graphicAndInput.cpp
+)
+endif()
+
 target_link_libraries(llcd PUBLIC sfml-graphics sfml-window sfml-system)
-find_package(OpenGL REQUIRED)
-include_directories(${OPENGL_INCLUDE_DIR})
-if (OPENGL_FOUND)
-  target_link_libraries(llcd PUBLIC ${OPENGL_LIBRARIES})
-endif()
 
-function(buildLlcd X)
-    add_executable(${X}_demo 
-    demo/${X}.cpp
-    )
+add_executable(box demo/boxes.cpp)
 
-    target_link_libraries(${X}_demo PUBLIC llcd)
-endfunction()
+target_link_libraries(box PUBLIC llcd)
 
-endif()
+add_executable(test demo/test.cpp)
 
-buildLlcd(boxes)
-buildLlcd(draw)
-buildLlcd(snake)
-buildLlcd(3d)
-buildLlcd(sprite)
-
+target_link_libraries(test PUBLIC llcd)
