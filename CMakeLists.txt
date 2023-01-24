@@ -30,12 +30,15 @@ add_subdirectory(libs/sfml/)
 
 include_directories(include/)
 
+
+
 set(llcd_common
     src/ctx.cpp 
     src/llcd.cpp
     src/data.cpp
     src/scenes.cpp
     src/objects.cpp
+    src/event.cpp
 )
 
 
@@ -68,6 +71,10 @@ add_library(llcd STATIC
 endif()
 
 target_link_libraries(llcd PUBLIC sfml-graphics sfml-window sfml-system)
+
+target_include_directories(llcd PUBLIC
+    include
+)
 
 add_executable(box demo/boxes.cpp)
 

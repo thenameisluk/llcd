@@ -56,6 +56,11 @@ int main(){
     for(uint8_t i = 0;i<75;i++){
         boxes[i].set(r(lcd_w-70),r(lcd_h-70),r(70)+10,r(70)+10,r(6),r(6),llcd::RGB565(r(254),r(254),r(254)));
     }
+
+    gra.eventHandler.addMouseDownListener([](llcd::vector2D pos,bool left){
+        gra.sceneNow = !gra.sceneNow;//make 0->1 or anyother->0
+    });
+
     //adding scenes gives it if from 0 to 2^32-1
     //starting from zero something like push_back in vector 
     gra.addScene(llcd::scenes::scene([](llcd::ctx& c){//adding scene 0
@@ -69,7 +74,5 @@ int main(){
         
         c.fill(llcd::RGB565(255,255,255));//white backgroung
 
-    })).addMouseDownListener([](llcd::vector2D pos,bool left){
-        gra.sceneNow = !gra.sceneNow;//make 0->1 or anyother->0
-    }).start();
+    })).start();
 }

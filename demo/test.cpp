@@ -8,7 +8,7 @@ using namespace llcd;
 llcd::llcd gra(lcd_h,lcd_w,"ksztalty");
 
 int main(){
-    gra.addMouseMoveListener([](vector2D pos){
+    gra.eventHandler.addMouseMoveListener([](vector2D pos,llcd::ctx& context){
             std::cout << pos.x << ", " << pos.y << std::endl;
     });
 

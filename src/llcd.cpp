@@ -13,32 +13,8 @@ llcd::llcd::llcd(int height, int width,const char* name):context(height,width){
     }
 }
 
-llcd::llcd& llcd::llcd::addMouseDownListener(std::function<void(vector2D,bool)> event){
-    MouseDownListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addMouseUpListener(std::function<void(vector2D,bool)> event){
-    MouseUpListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addMouseMoveListener(std::function<void(vector2D)> event){
-    MouseMoveListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addKeyboardEventListener(std::function<void(input::KeyboardInput)> event){
-    KeyboardEventListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addPicoButtonsListener(std::function<void(input::legacyInput)> event){
-    LegacyButtonsListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addPspInputListener(std::function<void(input::PspInput)> event){
-    PspInputListener = event;
-    return *this;
-};
-llcd::llcd& llcd::llcd::addExitListener(std::function<bool()> event){
-    exitListener = event;
+llcd::llcd& llcd::llcd::addExitListener(std::function<bool()> listener){
+    exitListener = listener;
     return *this;
 }
 
@@ -46,6 +22,10 @@ llcd::llcd& llcd::llcd::addScene(scenes::scene s){
     s_menager.addScene(s);
     return *this;
 };
+
+void llcd::llcd::triggerEvent(events::event event){
+    eventHandler.handleEvent(event,context);
+}
 
 void llcd::llcd::start(){
     

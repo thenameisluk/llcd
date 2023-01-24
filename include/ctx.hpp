@@ -51,6 +51,8 @@ namespace llcd{
             void drawLineThick(int32_t x1,int32_t y1,int32_t x2,int32_t y2,uint32_t scale,color c);
             void drawLineUpDown(int32_t x,int32_t y,int32_t l,color c);
             void drawLineLeftRight(int32_t x,int32_t y,int32_t l,color c);
+            //other ctx
+            void drawCtx(int32_t x,int32_t y,ctx& context);
             //triangle
             void drawTriangle(int32_t x1,int32_t y1,int32_t x2,int32_t y2,int32_t x3,int32_t y3,color c);
             void fillTriangle(int32_t x1,int32_t y1,int32_t x2,int32_t y2,int32_t x3,int32_t y3,color c);

@@ -32,6 +32,11 @@ void llcd::video::initVideo(int height, int width,const char* name){
     initialized_video = true;
 };
 uint32_t lastX,lastY;
+bool mouseDown = false;
+llcd::vector2D llcd::llcd::getMousePosition(){
+    return vector2D(lastX,lastY);
+}
+
 void llcd::video::emitVideo(ctx& context){
     if(!initialized_video)throw exception(e_video_initialation_error,"not initialized video");
     for(int i = 0;i<pcount;i++){
@@ -54,15 +59,25 @@ void llcd::llcd::eventChecker(){
         //exit
         if (event.type == sf::Event::Closed)
             throw exception(e_exit,"someone tried to close the windows");
-        if (event.type == sf::Event::MouseButtonPressed) MouseDownListener(vector2D(lastX,lastY),true);
-        if (event.type == sf::Event::MouseButtonReleased) MouseUpListener(vector2D(lastX,lastY),true);
+        if (event.type == sf::Event::MouseButtonPressed){
+            mouseDown = true;
+            triggerEvent(events::getMouseDownEvent(vector2D(lastX,lastY),true));
+        };
+        if (event.type == sf::Event::MouseButtonReleased){
+            mouseDown = false;
+            triggerEvent(events::getMouseUpEvent(vector2D(lastX,lastY),true));
+        };
         if (event.type == sf::Event::MouseMoved) {
-            MouseMoveListener(vector2D(event.mouseMove.x,event.mouseMove.y));
+            triggerEvent(events::getMouseMoveEvent(vector2D(event.mouseMove.x,event.mouseMove.y)));
             lastX = event.mouseMove.x;
             lastY = event.mouseMove.y;
         }
     }
 }
+
+bool llcd::llcd::mouseIsDown(bool left){
+    return mouseDown;
+};
 
 void llcd::video::deinitVideo(){
     delete window;

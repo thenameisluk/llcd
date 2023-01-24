@@ -1,4 +1,5 @@
 #include "ctx.hpp"
+#include "ascii.hpp"
 #include <cmath>
 #include <iostream>
 //ctx class
@@ -205,29 +206,56 @@ void llcd::ctx::fillTriangle(int32_t x1,int32_t y1,int32_t x2,int32_t y2,int32_t
         swap_int(y2,y1);
         swap_int(x2,x1);
     }
-    if(y1>y3){
+    if(y3>y2){
         swap_int(y1,y3);
         swap_int(x1,x3);
     }
+    //drawTriangle(x1,y1,x2,y2,x3,y3,c);
     float longLineX = x1;
     float DynamicLineX = x1;
-    float longLineStep = float(x1-x3)/float(y1-y3);
-    float shortLineStep = float(x1-x2)/float(y1-y2);
-    int height = y3-y1;
+    float longLineStep = float(x3-x1)/float(abs(y3-y1));
+    float shortLineStep = float(x2-x1)/float(abs(y2-y1));
+    int height = y1-y3;
     for(int32_t currentY = 0;currentY<height;currentY++){
-        if(currentY+y1==y2)shortLineStep = float(x2-x3)/float(y2-y3);
+        if(y1-currentY==y2)shortLineStep = float(x3-x2)/float(abs(y3-y2));
         longLineX += longLineStep;
         DynamicLineX += shortLineStep;
         if(longLineX>DynamicLineX){
-            drawLineLeftRight(DynamicLineX,currentY+y1,longLineX-DynamicLineX,c);
+            drawLineLeftRight(DynamicLineX,y1-currentY,longLineX-DynamicLineX,c);
         }else{
-            drawLineLeftRight(longLineX,currentY+y1,DynamicLineX-longLineX,c);
+            drawLineLeftRight(longLineX,y1-currentY,DynamicLineX-longLineX,c);
         }
     }
 
 };
 void llcd::ctx::drawLetter(char ch,int32_t x,int32_t y,color c,int32_t scale){
-    //to-do
+    uint8_t id = (uint8_t)ch-' ';
+    for(uint8_t i=0;i<5;i++){
+        for(uint8_t j=0;j<5;j++){
+            if(characters[id][j][i])fillRect(x+i*scale,y+j*scale,scale,scale,c);
+        }
+    }
+};
+
+void llcd::ctx::drawCtx(int32_t x,int32_t y,ctx& context){
+    for(int32_t ix = 0;ix<context.width;ix++){
+        for(int32_t iy = 0;iy<context.height;iy++){
+            drawPoint(x+ix,y+iy,context.img[ix+context.width*iy]);
+        }
+    }
+}
+
+void llcd::ctx::print(const char* text,int32_t x,int32_t y,color c,uint32_t scale){
+    uint32_t place = 0;
+    uint32_t line = 0;
+    while (text[place]!='\0'){
+        
+        if(text[place]=='\n'){
+            line++;
+            continue;
+        }else drawLetter(text[place],x+6*place*scale,y+line*scale*6,c,scale);
+        place++;
+    }
 };
 
 void llcd::ctx::drawSymbol(int32_t x,int32_t y,uint8_t*,color c,uint32_t scale){

@@ -23,6 +23,7 @@ itself so yes
 #include "audio.hpp"
 #include "objects.hpp"
 #include "scenes.hpp"
+#include "event.hpp"
 
 namespace llcd{
     enum platform : uint8_t
@@ -35,7 +36,7 @@ namespace llcd{
         public:
             ctx context;
             uint32_t sceneNow = 0;
-            scenes::sceneManager s_menager;
+            
             llcd(int height, int width,const char* name = "name");
             ///direct checks///
             
@@ -71,58 +72,25 @@ namespace llcd{
             /// @return the position of the psp joystick
             fvector2D pspJoystickPosition();
 
+            ///events///
+
+            events::event_handler eventHandler;
+            void triggerEvent(events::event ev);
+
+            //super event listener
+        private:
+            std::function<bool()> exitListener = [](){return true;};
+        public:
+            /// @brief SETS event that runs when user tries to exit
+            /// @param listener <bool()> returns true if the user wants to exit
+            /// @return returns the class itself
+            llcd& addExitListener(std::function<bool()> listener);
+
             ///setups///
             
+            scenes::sceneManager s_menager;
             llcd& addScene(scenes::scene s);
-
-            ///event listeners///
             
-            std::function<void(vector2D,bool)> MouseDownListener = [](vector2D pos,bool left){};
-            std::function<void(vector2D,bool)> MouseUpListener = [](vector2D pos,bool left){};
-            std::function<void(vector2D)> MouseMoveListener = [](vector2D pos){};
-            std::function<void(input::KeyboardInput)> KeyboardEventListener = [](input::KeyboardInput key){};
-            std::function<void(input::legacyInput)> LegacyButtonsListener = [](input::legacyInput key){};
-            std::function<void(input::PspInput)> PspInputListener = [](input::PspInput key){};
-            std::function<bool()> exitListener = [](){return true;};
-
-
-            /// @brief SETS event that runs when the mouse is pressed
-            /// @param event <void(vector2D - mouse position ,bool - left (not working rn))>
-            /// @return returns the class itself
-            llcd& addMouseDownListener(std::function<void(vector2D,bool)> event);
-            
-            /// @brief SETS event that runs when the mouse is released
-            /// @param event <void(vector2D - mouse position ,bool - left (not working rn))>
-            /// @return returns the class itself
-            llcd& addMouseUpListener(std::function<void(vector2D,bool)> event);
-            
-            /// @brief SETS event that runs when the mouse is moved
-            /// @param event <void(vector2D - mouse position)>
-            /// @return returns the class itself
-            llcd& addMouseMoveListener(std::function<void(vector2D)> event);
-            
-            /// @brief SETS event that runs when the keyboard is pressed
-            /// @param event <void(input::KeyboardInput - key)>
-            /// @return returns the class itself
-            llcd& addKeyboardEventListener(std::function<void(input::KeyboardInput)> event);
-                 
-            /// @brief SETS event that runs when the legacy buttons are pressed
-            /// @param event <void(input::legacyInput - key)>
-            /// @return returns the class itself
-            llcd& addPicoButtonsListener(std::function<void(input::legacyInput)> event);
-            
-            /// @brief SETS event that runs when the psp is pressed
-            /// @param event <void(input::PspInput - key)>
-            /// @return returns the class itself
-            llcd& addPspInputListener(std::function<void(input::PspInput)> event);
-
-            /// @brief SETS event that runs when the exit button is pressed
-            /// @param event <bool()> return true if you want to exit the game
-            /// or false if you want to ask the user if he/she wants to exit
-            /// @return returns the class itself
-            llcd& addExitListener(std::function<bool()> event);
-            
-
             ///start///
 
             /// @brief calling this function will start the game

@@ -24,3 +24,11 @@ void llcd::scenes::sceneManager::frame(uint32_t s,ctx& context){
         throw exception(004,"to hi scene number");
     }
 };
+
+void llcd::scenes::sceneManager::handleEvent(uint32_t s,events::event event,ctx& context){
+    if(scenes.size()>s){
+        scenes[s].eventHandler.handleEvent(event,context);
+    }else{
+        throw exception(004,"to hi scene number");
+    }
+};
