@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2018 Laurent Gomila (laurent@sfml-dev.org)
+// Copyright (C) 2007-2023 Laurent Gomila (laurent@sfml-dev.org)
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -26,38 +26,39 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/System/Clock.hpp>
-
-#if defined(SFML_SYSTEM_WINDOWS)
-    #include <SFML/System/Win32/ClockImpl.hpp>
-#else
-    #include <SFML/System/Unix/ClockImpl.hpp>
-#endif
+#include <SFML/System/Time.hpp>
 
 
 namespace sf
 {
 ////////////////////////////////////////////////////////////
-Clock::Clock() :
-m_startTime(priv::ClockImpl::getCurrentTime())
-{
-}
+Clock::Clock() = default;
 
 
 ////////////////////////////////////////////////////////////
 Time Clock::getElapsedTime() const
 {
-    return priv::ClockImpl::getCurrentTime() - m_startTime;
+    return durationToTime(ClockImpl::now() - m_startTime);
 }
 
 
 ////////////////////////////////////////////////////////////
 Time Clock::restart()
 {
-    Time now = priv::ClockImpl::getCurrentTime();
-    Time elapsed = now - m_startTime;
-    m_startTime = now;
+    const ClockImpl::time_point now     = ClockImpl::now();
+    Time                        elapsed = durationToTime(now - m_startTime);
+    m_startTime                         = now;
 
     return elapsed;
+}
+
+
+////////////////////////////////////////////////////////////
+Time Clock::durationToTime(Clock::ClockImpl::duration duration)
+{
+    using std::chrono::duration_cast;
+    using std::chrono::microseconds;
+    return duration_cast<microseconds>(duration);
 }
 
 } // namespace sf

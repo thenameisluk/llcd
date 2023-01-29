@@ -19,7 +19,7 @@ itself so yes
 
 namespace llcd{
     namespace video{
-        void initVideo(int height, int width,const char* name);
+        void initVideo(int width, int height,const char* name);
         void emitVideo(ctx& pixels);
         void deinitVideo();
     }

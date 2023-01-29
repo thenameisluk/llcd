@@ -4,16 +4,16 @@
 llcd::events::event llcd::events::getMouseDownEvent(vector2D position,bool left){
     event e;
     e.type = mouseDown;
-    e.data.mouseMove.x = position.x;
-    e.data.mouseMove.y = position.y;
+    e.data.mouseDown.x = position.x;
+    e.data.mouseDown.y = position.y;
     e.data.mouseDown.left = left;
     return e;
 };
 llcd::events::event llcd::events::getMouseUpEvent(vector2D position,bool left){
     event e;
     e.type = mouseUp;
-    e.data.mouseMove.x = position.x;
-    e.data.mouseMove.y = position.y;
+    e.data.mouseUp.x = position.x;
+    e.data.mouseUp.y = position.y;
     e.data.mouseUp.left = left;
     return e;
 };
@@ -44,16 +44,19 @@ llcd::events::event llcd::events::getPspEvent(input::PspInput button){
 };
 
 void llcd::events::event_handler::handleEvent(event e,ctx& context){
+    AnyListener(e,context);
     switch(e.type){
         case mouseDown:
             MouseDownListener(vector2D(e.data.mouseDown.x,e.data.mouseDown.y),e.data.mouseDown.left,context);
             lastX = e.data.mouseDown.x;
             lastY = e.data.mouseDown.y;
+            mousedDown = true;
             break;
         case mouseUp:
             MouseUpListener(vector2D(e.data.mouseUp.x,e.data.mouseUp.y),e.data.mouseUp.left,context);
             lastX = e.data.mouseUp.x;
             lastY = e.data.mouseUp.y;
+            mousedDown = false;
             break;
         case mouseMove:
             MouseMoveListener(vector2D(e.data.mouseMove.x,e.data.mouseMove.y),context);
@@ -70,6 +73,11 @@ void llcd::events::event_handler::handleEvent(event e,ctx& context){
             PspInputListener(e.data.psp.button,context);
             break;
     }
+};
+
+llcd::events::event_handler& llcd::events::event_handler::addAnyListener(std::function<void(event&,ctx&)> listener){
+    AnyListener = listener;
+    return *this;
 };
 
 llcd::events::event_handler& llcd::events::event_handler::addMouseDownListener(std::function<void(vector2D,bool,llcd::ctx&)> event){

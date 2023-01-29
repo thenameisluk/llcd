@@ -57,7 +57,7 @@ int main(){
         boxes[i].set(r(lcd_w-70),r(lcd_h-70),r(70)+10,r(70)+10,r(6),r(6),llcd::RGB565(r(254),r(254),r(254)));
     }
 
-    gra.eventHandler.addMouseDownListener([](llcd::vector2D pos,bool left){
+    gra.eventHandler.addMouseDownListener([](llcd::vector2D pos,bool left,llcd::ctx& context){
         gra.sceneNow = !gra.sceneNow;//make 0->1 or anyother->0
     });
 

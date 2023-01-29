@@ -1,6 +1,7 @@
 #pragma once
 #include <functional>
 #include "input.hpp"
+#include "ctx.hpp"
 #include "objects.hpp"
 
 
@@ -54,8 +55,10 @@ namespace llcd{
                 event_handler(){};
                 int32_t lastX;
                 int32_t lastY;
+                bool mousedDown = false;
                 void handleEvent(event e,ctx& context);
             private:
+                std::function<void(event&,ctx&)> AnyListener = [](event& e,ctx& context){};
                 std::function<void(vector2D,bool,ctx&)> MouseDownListener = [](vector2D pos,bool left,ctx& context){};
                 std::function<void(vector2D,bool,ctx&)> MouseUpListener = [](vector2D pos,bool left,ctx& context){};
                 std::function<void(vector2D,ctx&)> MouseMoveListener = [](vector2D pos,ctx& context){};
@@ -63,33 +66,37 @@ namespace llcd{
                 std::function<void(input::legacyInput,ctx&)> LegacyButtonsListener = [](input::legacyInput key,ctx& context){};
                 std::function<void(input::PspInput,ctx&)> PspInputListener = [](input::PspInput key,ctx& context){};
             public:
+                /// @brief SETS event that runs on any event
+                /// @param listener <void(event& - event,ctx& - context)>
+                /// @return returns the class itself
+                event_handler& addAnyListener(std::function<void(event&,ctx&)> listener);
                 /// @brief SETS event that runs when the mouse is pressed
-                /// @param event <void(vector2D - mouse position ,bool - left (not working rn))>
+                /// @param event <void(vector2D - mouse position ,bool - left (not working rn),ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addMouseDownListener(std::function<void(vector2D,bool,ctx&)> event);
                 
                 /// @brief SETS event that runs when the mouse is released
-                /// @param event <void(vector2D - mouse position ,bool - left (not working rn))>
+                /// @param event <void(vector2D - mouse position ,bool - left (not working rn),ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addMouseUpListener(std::function<void(vector2D,bool,ctx&)> event);
                 
                 /// @brief SETS event that runs when the mouse is moved
-                /// @param event <void(vector2D - mouse position)>
+                /// @param event <void(vector2D - mouse position,ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addMouseMoveListener(std::function<void(vector2D,ctx&)> event);
                 
                 /// @brief SETS event that runs when the keyboard is pressed
-                /// @param event <void(input::KeyboardInput - key)>
+                /// @param event <void(input::KeyboardInput - key,ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addKeyboardEventListener(std::function<void(input::KeyboardInput,ctx&)> event);
                     
                 /// @brief SETS event that runs when the legacy buttons are pressed
-                /// @param event <void(input::legacyInput - key)>
+                /// @param event <void(input::legacyInput - key,ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addPicoButtonsListener(std::function<void(input::legacyInput,ctx&)> event);
                 
                 /// @brief SETS event that runs when the psp is pressed
-                /// @param event <void(input::PspInput - key)>
+                /// @param event <void(input::PspInput - key,ctx& - context)>
                 /// @return returns the class itself
                 event_handler& addPspInputListener(std::function<void(input::PspInput,ctx&)> event);
         };

@@ -15,7 +15,7 @@ you want you can modify code
 itself so yes
 */
 
-#pragma oncd
+#pragma once
 #include <functional>
 #include "input.hpp"
 #include "ctx.hpp"

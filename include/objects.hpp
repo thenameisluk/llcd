@@ -18,8 +18,34 @@ itself so yes
 #pragma once
 #include "stdint.h"
 #include <vector>
+#include "functional"
+#include "exception.hpp"
+#include "ctx.hpp"
 
 namespace llcd{
+    template<typename T>
+    class vector{
+            uint32_t size;
+            T** data = nullptr;
+        public:
+            
+            vector();
+            ~vector();
+            vector(vector<T>& v);
+            uint32_t Size();
+            void push(T t);
+            T& operator[](uint32_t i);
+            /// @brief loops through the vector
+            /// @param f gives element
+            void forEach(std::function<void(T&)> f);
+            void forEach(std::function<void(T&,uint32_t)> f);
+            /// @brief loop throught the vector
+            /// @param f gives element return true if element should be removed 
+            void forEachDel(std::function<bool(T&)> f);
+            void putOnTop(uint32_t i);
+            void putOnBottom(uint32_t i);
+    };
+    #include "objects.tpp"
     //float vector 2D
     class fvector2D{
         public:
@@ -42,6 +68,7 @@ namespace llcd{
             vector2D(fvector2D& v);
             bool operator==(vector2D& v);
             bool operator!=(vector2D& v);
+            float distance(vector2D& v);
             vector2D operator-(vector2D& v);
             vector2D operator+(vector2D& v);
     };
@@ -49,20 +76,31 @@ namespace llcd{
     class AABB{
         public:
             AABB(vector2D position,vector2D size);
+            AABB(vector2D position,vector2D colisionPoint,vector2D size);
             vector2D position;
+            vector2D colisionPoint;
             vector2D size;
-            bool isColiding(AABB& colider,vector2D myPositon = vector2D(),vector2D itPosition = vector2D());
+            void move(vector2D delta);
+            void setPosition(vector2D position);
+            void setColisionPoint(vector2D colisionPoint);
+            void setSize(vector2D size);
+            bool isColiding(AABB& colider);
+            bool isInside(vector2D point);
+            void draw(ctx& context);
     };
     /// @brief sat colider
-    class SAT{
+    class SAT{//to-do
         public:
-            std::vector<vector2D> points;
-            std::vector<uint32_t> triangles;
-            SAT(std::vector<vector2D> points,std::vector<uint32_t> triangles);
-            bool isColiding(SAT& colider,vector2D myPositon = vector2D(),vector2D itPosition = vector2D());
-            bool isColiding(AABB& colider,vector2D myPositon = vector2D(),vector2D itPosition = vector2D());
+            vector2D position;
+            vector<vector2D> points;
+            vector<uint32_t> triangles;
+            SAT(vector2D position,vector<vector2D> points,vector<uint32_t> triangles);
+            bool isColiding(SAT& colider);
+            bool isColiding(AABB& colider);
+            void draw(ctx& context);
         private:
-            bool trinagleColision(vector2D p1,vector2D p2,vector2D p3);
+            bool trianglesColision(vector2D p11,vector2D p12,vector2D p13,vector2D point);
+            bool trinagleColision(vector2D p11,vector2D p12,vector2D p13,vector2D p21,vector2D p22,vector2D p23);
     };    
 }
 

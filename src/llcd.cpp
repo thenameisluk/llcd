@@ -1,10 +1,11 @@
 #include "llcd.hpp"
 #include "exception.hpp"
 
-llcd::llcd::llcd(int height, int width,const char* name):context(height,width){
+llcd::llcd::llcd(int height, int width,const char* name):context(width,height){
     //audio::audio audioMenager;
+    video::initVideo(width,height,name);
     try{
-        video::initVideo(height,width,name);
+        
         
     }catch(exception e){
         if(e.error_code<100){
@@ -24,7 +25,7 @@ llcd::llcd& llcd::llcd::addScene(scenes::scene s){
 };
 
 void llcd::llcd::triggerEvent(events::event event){
-    eventHandler.handleEvent(event,context);
+    s_menager.handleEvent(sceneNow,event,context);
 }
 
 void llcd::llcd::start(){

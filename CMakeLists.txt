@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
-project(llcd)
+project(llcd VERSION 0.1.0)
+set(CMAKE_CXX_STANDARD 17)
 
 #include(pico_sdk_import.cmake)
 #project(llcd)
@@ -39,6 +40,7 @@ set(llcd_common
     src/scenes.cpp
     src/objects.cpp
     src/event.cpp
+    src/window.cpp
 )
 
 

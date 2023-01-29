@@ -26,76 +26,96 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/EglContext.hpp>
-#include <SFML/Window/WindowImpl.hpp>
-#include <SFML/OpenGL.hpp>
 #include <SFML/System/Err.hpp>
 #include <SFML/System/Sleep.hpp>
-#include <SFML/System/Mutex.hpp>
-#include <SFML/System/Lock.hpp>
+#include <SFML/Window/EglContext.hpp>
+#include <SFML/Window/WindowImpl.hpp>
+
+#include <mutex>
+#include <ostream>
 #ifdef SFML_SYSTEM_ANDROID
-    #include <SFML/System/Android/Activity.hpp>
+#include <SFML/System/Android/Activity.hpp>
 #endif
-#ifdef SFML_SYSTEM_LINUX
-    #include <X11/Xlib.h>
+#if defined(SFML_SYSTEM_LINUX) && !defined(SFML_USE_DRM)
+#include <X11/Xlib.h>
+#endif
+
+// We check for this definition in order to avoid multiple definitions of GLAD
+// entities during unity builds of SFML.
+#ifndef SF_GLAD_EGL_IMPLEMENTATION_INCLUDED
+#define SF_GLAD_EGL_IMPLEMENTATION_INCLUDED
+#define SF_GLAD_EGL_IMPLEMENTATION
+#include <glad/egl.h>
 #endif
 
 namespace
 {
-    EGLDisplay getInitializedDisplay()
-    {
-#if defined(SFML_SYSTEM_LINUX)
-
-        static EGLDisplay display = EGL_NO_DISPLAY;
-
-        if (display == EGL_NO_DISPLAY)
-        {
-            display = eglCheck(eglGetDisplay(EGL_DEFAULT_DISPLAY));
-            eglCheck(eglInitialize(display, NULL, NULL));
-        }
-
-        return display;
-
-#elif defined(SFML_SYSTEM_ANDROID)
+// A nested named namespace is used here to allow unity builds of SFML.
+namespace EglContextImpl
+{
+EGLDisplay getInitializedDisplay()
+{
+#if defined(SFML_SYSTEM_ANDROID)
 
     // On Android, its native activity handles this for us
-    sf::priv::ActivityStates* states = sf::priv::getActivity(NULL);
-    sf::Lock lock(states->mutex);
+    sf::priv::ActivityStates& states = sf::priv::getActivity();
+    std::lock_guard           lock(states.mutex);
 
-    return states->display;
+    return states.display;
 
 #endif
+
+    static EGLDisplay display = EGL_NO_DISPLAY;
+
+    if (display == EGL_NO_DISPLAY)
+    {
+        eglCheck(display = eglGetDisplay(EGL_DEFAULT_DISPLAY));
+        eglCheck(eglInitialize(display, nullptr, nullptr));
     }
+
+    return display;
 }
 
 
-namespace sf
+////////////////////////////////////////////////////////////
+void ensureInit()
 {
-namespace priv
+    static bool initialized = false;
+    if (!initialized)
+    {
+        initialized = true;
+
+        // We don't check the return value since the extension
+        // flags are cleared even if loading fails
+        gladLoaderLoadEGL(EGL_NO_DISPLAY);
+
+        // Continue loading with a display
+        gladLoaderLoadEGL(getInitializedDisplay());
+    }
+}
+} // namespace EglContextImpl
+} // namespace
+
+
+namespace sf::priv
 {
 ////////////////////////////////////////////////////////////
-EglContext::EglContext(EglContext* shared) :
-m_display (EGL_NO_DISPLAY),
-m_context (EGL_NO_CONTEXT),
-m_surface (EGL_NO_SURFACE),
-m_config  (NULL)
+EglContext::EglContext(EglContext* shared)
 {
+    EglContextImpl::ensureInit();
+
     // Get the initialized EGL display
-    m_display = getInitializedDisplay();
+    m_display = EglContextImpl::getInitializedDisplay();
 
     // Get the best EGL config matching the default video settings
     m_config = getBestConfig(m_display, VideoMode::getDesktopMode().bitsPerPixel, ContextSettings());
     updateSettings();
 
-    // Note: The EGL specs say that attrib_list can be NULL when passed to eglCreatePbufferSurface,
+    // Note: The EGL specs say that attrib_list can be a null pointer when passed to eglCreatePbufferSurface,
     // but this is resulting in a segfault. Bug in Android?
-    EGLint attrib_list[] = {
-        EGL_WIDTH, 1,
-        EGL_HEIGHT,1,
-        EGL_NONE
-    };
+    EGLint attrib_list[] = {EGL_WIDTH, 1, EGL_HEIGHT, 1, EGL_NONE};
 
-    m_surface = eglCheck(eglCreatePbufferSurface(m_display, m_config, attrib_list));
+    eglCheck(m_surface = eglCreatePbufferSurface(m_display, m_config, attrib_list));
 
     // Create EGL context
     createContext(shared);
@@ -103,24 +123,25 @@ m_config  (NULL)
 
 
 ////////////////////////////////////////////////////////////
-EglContext::EglContext(EglContext* shared, const ContextSettings& settings, const WindowImpl* owner, unsigned int bitsPerPixel) :
-m_display (EGL_NO_DISPLAY),
-m_context (EGL_NO_CONTEXT),
-m_surface (EGL_NO_SURFACE),
-m_config  (NULL)
+EglContext::EglContext(EglContext*                        shared,
+                       const ContextSettings&             settings,
+                       [[maybe_unused]] const WindowImpl& owner,
+                       unsigned int                       bitsPerPixel)
 {
+    EglContextImpl::ensureInit();
+
 #ifdef SFML_SYSTEM_ANDROID
 
     // On Android, we must save the created context
-    ActivityStates* states = getActivity(NULL);
-    Lock lock(states->mutex);
+    ActivityStates& states = getActivity();
+    std::lock_guard lock(states.mutex);
 
-    states->context = this;
+    states.context = this;
 
 #endif
 
     // Get the initialized EGL display
-    m_display = getInitializedDisplay();
+    m_display = EglContextImpl::getInitializedDisplay();
 
     // Get the best EGL config matching the requested video settings
     m_config = getBestConfig(m_display, bitsPerPixel, settings);
@@ -132,18 +153,20 @@ m_config  (NULL)
 #if !defined(SFML_SYSTEM_ANDROID)
     // Create EGL surface (except on Android because the window is created
     // asynchronously, its activity manager will call it for us)
-    createSurface((EGLNativeWindowType)owner->getSystemHandle());
+    createSurface(owner.getSystemHandle());
+
 #endif
 }
 
 
 ////////////////////////////////////////////////////////////
-EglContext::EglContext(EglContext* shared, const ContextSettings& settings, unsigned int width, unsigned int height) :
-m_display (EGL_NO_DISPLAY),
-m_context (EGL_NO_CONTEXT),
-m_surface (EGL_NO_SURFACE),
-m_config  (NULL)
+EglContext::EglContext(EglContext* /*shared*/, const ContextSettings& /*settings*/, const Vector2u& /*size*/)
 {
+    EglContextImpl::ensureInit();
+
+    sf::err() << "Warning: context has not been initialized. The constructor EglContext(shared, settings, size) is "
+                 "currently not implemented."
+              << std::endl;
 }
 
 
@@ -154,7 +177,8 @@ EglContext::~EglContext()
     cleanupUnsharedResources();
 
     // Deactivate the current context
-    EGLContext currentContext = eglCheck(eglGetCurrentContext());
+    EGLContext currentContext = EGL_NO_CONTEXT;
+    eglCheck(currentContext = eglGetCurrentContext());
 
     if (currentContext == m_context)
     {
@@ -176,12 +200,32 @@ EglContext::~EglContext()
 
 
 ////////////////////////////////////////////////////////////
+GlFunctionPointer EglContext::getFunction(const char* name)
+{
+    EglContextImpl::ensureInit();
+
+    return eglGetProcAddress(name);
+}
+
+
+////////////////////////////////////////////////////////////
 bool EglContext::makeCurrent(bool current)
 {
-    if (current)
-        return m_surface != EGL_NO_SURFACE && eglCheck(eglMakeCurrent(m_display, m_surface, m_surface, m_context));
+    if (m_surface == EGL_NO_SURFACE)
+        return false;
 
-    return m_surface != EGL_NO_SURFACE && eglCheck(eglMakeCurrent(m_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT));
+    EGLBoolean result = EGL_FALSE;
+
+    if (current)
+    {
+        eglCheck(result = eglMakeCurrent(m_display, m_surface, m_surface, m_context));
+    }
+    else
+    {
+        eglCheck(result = eglMakeCurrent(m_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT));
+    }
+
+    return (result != EGL_FALSE);
 }
 
 
@@ -203,10 +247,7 @@ void EglContext::setVerticalSyncEnabled(bool enabled)
 ////////////////////////////////////////////////////////////
 void EglContext::createContext(EglContext* shared)
 {
-    const EGLint contextVersion[] = {
-        EGL_CONTEXT_CLIENT_VERSION, 1,
-        EGL_NONE
-    };
+    const EGLint contextVersion[] = {EGL_CONTEXT_CLIENT_VERSION, 1, EGL_NONE};
 
     EGLContext toShared;
 
@@ -219,43 +260,52 @@ void EglContext::createContext(EglContext* shared)
         eglMakeCurrent(m_display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
 
     // Create EGL context
-    m_context = eglCheck(eglCreateContext(m_display, m_config, toShared, contextVersion));
+    eglCheck(m_context = eglCreateContext(m_display, m_config, toShared, contextVersion));
 }
 
 
 ////////////////////////////////////////////////////////////
 void EglContext::createSurface(EGLNativeWindowType window)
 {
-    m_surface = eglCheck(eglCreateWindowSurface(m_display, m_config, window, NULL));
+    eglCheck(m_surface = eglCreateWindowSurface(m_display, m_config, window, nullptr));
 }
 
 
 ////////////////////////////////////////////////////////////
 void EglContext::destroySurface()
 {
+    // Ensure that this context is no longer active since our surface is going to be destroyed
+    setActive(false);
+
     eglCheck(eglDestroySurface(m_display, m_surface));
     m_surface = EGL_NO_SURFACE;
-
-    // Ensure that this context is no longer active since our surface is now destroyed
-    setActive(false);
 }
 
 
 ////////////////////////////////////////////////////////////
 EGLConfig EglContext::getBestConfig(EGLDisplay display, unsigned int bitsPerPixel, const ContextSettings& settings)
 {
-    // Set our video settings constraint
-    const EGLint attributes[] = {
-        EGL_BUFFER_SIZE, static_cast<EGLint>(bitsPerPixel),
-        EGL_DEPTH_SIZE, static_cast<EGLint>(settings.depthBits),
-        EGL_STENCIL_SIZE, static_cast<EGLint>(settings.stencilBits),
-        EGL_SAMPLE_BUFFERS, static_cast<EGLint>(settings.antialiasingLevel),
-        EGL_SURFACE_TYPE, EGL_WINDOW_BIT | EGL_PBUFFER_BIT,
-        EGL_RENDERABLE_TYPE, EGL_OPENGL_ES_BIT,
-        EGL_NONE
-    };
+    EglContextImpl::ensureInit();
 
-    EGLint configCount;
+    // Set our video settings constraint
+    const EGLint attributes[] =
+        {EGL_BUFFER_SIZE,
+         static_cast<EGLint>(bitsPerPixel),
+         EGL_DEPTH_SIZE,
+         static_cast<EGLint>(settings.depthBits),
+         EGL_STENCIL_SIZE,
+         static_cast<EGLint>(settings.stencilBits),
+         EGL_SAMPLE_BUFFERS,
+         settings.antialiasingLevel ? 1 : 0,
+         EGL_SAMPLES,
+         static_cast<EGLint>(settings.antialiasingLevel),
+         EGL_SURFACE_TYPE,
+         EGL_WINDOW_BIT | EGL_PBUFFER_BIT,
+         EGL_RENDERABLE_TYPE,
+         EGL_OPENGL_ES_BIT,
+         EGL_NONE};
+
+    EGLint    configCount;
     EGLConfig configs[1];
 
     // Ask EGL for the best config matching our video settings
@@ -270,30 +320,45 @@ EGLConfig EglContext::getBestConfig(EGLDisplay display, unsigned int bitsPerPixe
 ////////////////////////////////////////////////////////////
 void EglContext::updateSettings()
 {
-    EGLint tmp;
-    
+    EGLBoolean result = EGL_FALSE;
+    EGLint     tmp    = 0;
+
     // Update the internal context settings with the current config
-    eglCheck(eglGetConfigAttrib(m_display, m_config, EGL_DEPTH_SIZE, &tmp));
-    m_settings.depthBits = tmp;
-    
-    eglCheck(eglGetConfigAttrib(m_display, m_config, EGL_STENCIL_SIZE, &tmp));
-    m_settings.stencilBits = tmp;
-    
-    eglCheck(eglGetConfigAttrib(m_display, m_config, EGL_SAMPLES, &tmp));
-    m_settings.antialiasingLevel = tmp;
-    
-    m_settings.majorVersion = 1;
-    m_settings.minorVersion = 1;
+    eglCheck(result = eglGetConfigAttrib(m_display, m_config, EGL_DEPTH_SIZE, &tmp));
+
+    if (result == EGL_FALSE)
+        err() << "Failed to retrieve EGL_DEPTH_SIZE" << std::endl;
+
+    m_settings.depthBits = static_cast<unsigned int>(tmp);
+
+    eglCheck(result = eglGetConfigAttrib(m_display, m_config, EGL_STENCIL_SIZE, &tmp));
+
+    if (result == EGL_FALSE)
+        err() << "Failed to retrieve EGL_STENCIL_SIZE" << std::endl;
+
+    m_settings.stencilBits = static_cast<unsigned int>(tmp);
+
+    eglCheck(result = eglGetConfigAttrib(m_display, m_config, EGL_SAMPLES, &tmp));
+
+    if (result == EGL_FALSE)
+        err() << "Failed to retrieve EGL_SAMPLES" << std::endl;
+
+    m_settings.antialiasingLevel = static_cast<unsigned int>(tmp);
+
+    m_settings.majorVersion   = 1;
+    m_settings.minorVersion   = 1;
     m_settings.attributeFlags = ContextSettings::Default;
 }
 
 
-#ifdef SFML_SYSTEM_LINUX
+#if defined(SFML_SYSTEM_LINUX) && !defined(SFML_USE_DRM)
 ////////////////////////////////////////////////////////////
 XVisualInfo EglContext::selectBestVisual(::Display* XDisplay, unsigned int bitsPerPixel, const ContextSettings& settings)
 {
+    EglContextImpl::ensureInit();
+
     // Get the initialized EGL display
-    EGLDisplay display = getInitializedDisplay();
+    EGLDisplay display = EglContextImpl::getInitializedDisplay();
 
     // Get the best EGL config matching the default video settings
     EGLConfig config = getBestConfig(display, bitsPerPixel, settings);
@@ -316,7 +381,7 @@ XVisualInfo EglContext::selectBestVisual(::Display* XDisplay, unsigned int bitsP
 
     // Get X11 visuals compatible with this EGL config
     XVisualInfo *availableVisuals, bestVisual;
-    int visualCount = 0;
+    int          visualCount = 0;
 
     availableVisuals = XGetVisualInfo(XDisplay, VisualIDMask, &vTemplate, &visualCount);
 
@@ -336,6 +401,4 @@ XVisualInfo EglContext::selectBestVisual(::Display* XDisplay, unsigned int bitsP
 }
 #endif
 
-} // namespace priv
-
-} // namespace sf
+} // namespace sf::priv

@@ -23,19 +23,33 @@ itself so yes
 typedef uint16_t color;
 
 namespace llcd{
+    typedef struct{
+        uint8_t r;
+        uint8_t g;
+        uint8_t b;
+    } RGB;
     constexpr color RGB565(uint8_t R,uint8_t G,uint8_t B){
         return (((B & 0b11111000)<<8) + ((R & 0b11111100)<<3) + (G>>3));
     };
     constexpr uint32_t RGB888(color rgb565){
         return ((((uint32_t)(((rgb565&0b1111100000000000)>>11)*8)<<16)+((uint32_t)((rgb565&0b0000000000011111)*8)<<8)+((uint32_t)(((rgb565&0b0000011111100000)>>5)*4))))+(255<<24);
     };
+    constexpr uint32_t RGB888(uint8_t R,uint8_t G,uint8_t B){
+        return RGB888(RGB565(R,G,B));
+    };
+    constexpr RGB revert(uint16_t color){
+        return RGB{uint8_t(((color & 0b1111100000000000)>>11)*8),uint8_t((color & 0b0000000000011111)*4),uint8_t(((color & 0b0000011111100000)>>5)*8)};
+    }
     class ctx{
         public:
+            //if you touch this you die
             color* img;
             int height;
             int width;
-            ctx(int height, int width);
+            ctx(int width, int height);
+            ctx(ctx& cp);
             ~ctx();
+            //size manipilation
             //entier screen
             void fill(color c);
             //points
@@ -63,6 +77,7 @@ namespace llcd{
             //letters
             void drawLetter(char ch,int32_t x,int32_t y,color c,int32_t scale=1);
             void print(const char* text,int32_t x,int32_t y,color c,uint32_t scale=1);
+            void print(int32_t number,int32_t x,int32_t y,color c,uint32_t scale=1);
         private:
             //helpfull
             void drawTwistLine(int32_t x1,int32_t y1,int32_t x2,int32_t y2,std::function<void(ctx&,int32_t,int32_t)> function);

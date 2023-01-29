@@ -6,11 +6,19 @@
 
 #define swap_int(a, b) { int32_t t; t = a; a = b; b = t;}
 
-llcd::ctx::ctx(int height, int width):height(height),width(width){
+llcd::ctx::ctx(int width, int height):height(height),width(width){
 
     img = new color[height*width];
     for(int32_t i = 0;i<width*height;i++){
         img[i] = 0;
+    }
+}
+llcd::ctx::ctx(ctx& cp){
+    height = cp.height;
+    width = cp.width;
+    img = new color[height*width];
+    for(int32_t i = 0;i<width*height;i++){
+        img[i] = cp.img[i];
     }
 }
 
@@ -198,33 +206,37 @@ void llcd::ctx::drawLineUpDown(int32_t x,int32_t y,int32_t l,color c){
 }
 
 void llcd::ctx::fillTriangle(int32_t x1,int32_t y1,int32_t x2,int32_t y2,int32_t x3,int32_t y3,color c){
-    if(y3>y2){
-        swap_int(y3,y2);
-        swap_int(x3,x2);
+    
+
+    if (y1 > y2) {
+    std::swap(x1, x2);
+    std::swap(y1, y2);
     }
-    if(y2>y1){
-        swap_int(y2,y1);
-        swap_int(x2,x1);
+    if (y2 > y3) {
+    std::swap(x2, x3);
+    std::swap(y2, y3);
     }
-    if(y3>y2){
-        swap_int(y1,y3);
-        swap_int(x1,x3);
+    if (y1 > y2) {
+    std::swap(x1, x2);
+    std::swap(y1, y2);
     }
-    //drawTriangle(x1,y1,x2,y2,x3,y3,c);
-    float longLineX = x1;
-    float DynamicLineX = x1;
-    float longLineStep = float(x3-x1)/float(abs(y3-y1));
-    float shortLineStep = float(x2-x1)/float(abs(y2-y1));
-    int height = y1-y3;
-    for(int32_t currentY = 0;currentY<height;currentY++){
-        if(y1-currentY==y2)shortLineStep = float(x3-x2)/float(abs(y3-y2));
-        longLineX += longLineStep;
-        DynamicLineX += shortLineStep;
-        if(longLineX>DynamicLineX){
-            drawLineLeftRight(DynamicLineX,y1-currentY,longLineX-DynamicLineX,c);
-        }else{
-            drawLineLeftRight(longLineX,y1-currentY,DynamicLineX-longLineX,c);
-        }
+    //1<2<3
+    float x1ToX2 = float(x2-x1)/float(y2-y1);
+    float x2ToX3 = float(x3-x2)/float(y3-y2);
+    float x1ToX3 = float(x3-x1)/float(y3-y1);
+
+    bool x1tox2S = true;
+    float currentLX = x1;
+    float currentSX = x1;
+    if(y1==y2)currentSX = x2;
+
+    for(int32_t currentY = y1;currentY<=y3;currentY++){
+        if(currentY == y2) x1tox2S = false;
+        if(currentLX<currentSX) drawLineLeftRight(currentLX,currentY,currentSX-currentLX,c);
+        else drawLineLeftRight(currentSX,currentY,currentLX-currentSX,c);
+        if(x1tox2S)currentSX += x1ToX2;
+        else currentSX += x2ToX3;
+        currentLX += x1ToX3;
     }
 
 };
@@ -257,6 +269,38 @@ void llcd::ctx::print(const char* text,int32_t x,int32_t y,color c,uint32_t scal
         place++;
     }
 };
+
+void llcd::ctx::print(int32_t number,int32_t x,int32_t y,color c,uint32_t scale){
+    bool negative = false;
+    if(number<0){
+        negative = true;
+        number = -number;
+    }
+    uint32_t numlenght = 0;
+    int32_t temp = number;
+    do{   
+        temp -= temp%10;
+        temp /= 10;
+        numlenght++;
+    }while (temp!=0);
+    numlenght+=negative;
+    char* txt = new char[numlenght+1];
+    txt[numlenght] = '\0';
+    
+    if(negative){
+        txt[0] = '-';
+    }
+    uint32_t itnumlenght= numlenght-1;
+    while(number!=0){
+        txt[itnumlenght] = number%10+'0';
+        number /= 10;
+        itnumlenght--;
+    }
+    print(txt,x,y,c,scale);
+    delete[] txt;
+
+    
+}
 
 void llcd::ctx::drawSymbol(int32_t x,int32_t y,uint8_t*,color c,uint32_t scale){
     //to-do

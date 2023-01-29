@@ -16,19 +16,20 @@ std::function<void(uint32_t,uint32_t)> llcd::input::mouseMove = [](int32_t x,int
 
 sf::Texture* texture;
 sf::Sprite* sprite;
+sf::String pname;
 
-void llcd::video::initVideo(int height, int width,const char* name){
+void llcd::video::initVideo(int width,int height,const char* name){
     h = height;
     w = width;
     pcount = width*height;
-
-    texture  = new sf::Texture();
-    texture->create(width,height);
+    pname = name;
+    texture = new sf::Texture();
+    if(!texture->create(sf::Vector2u(width,height)))throw exception(001,"unable to create texture");
     sprite = new sf::Sprite(*texture);
 
     pixele = new uint8_t[width*height*4];
-    window = new sf::RenderWindow(sf::VideoMode(width, height), name);
-    window->setFramerateLimit(24);
+    window = new sf::RenderWindow(sf::VideoMode(sf::Vector2u(width,height)),pname);
+    window->setFramerateLimit(60);
     initialized_video = true;
 };
 uint32_t lastX,lastY;
@@ -43,7 +44,7 @@ void llcd::video::emitVideo(ctx& context){
         ((uint32_t*)(pixele))[i] = RGB888(context.img[i]);
     }
     
-    texture->update((sf::Uint8*)(pixele));
+    texture->update((uint8_t*)(pixele));
 
     sprite->setTexture(*texture);
 
