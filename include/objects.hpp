@@ -28,7 +28,6 @@ namespace llcd{
             uint32_t size;
             T** data = nullptr;
         public:
-            
             vector();
             ~vector();
             vector(vector<T>& v);
