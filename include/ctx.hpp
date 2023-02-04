@@ -41,11 +41,11 @@ namespace llcd{
         return RGB{uint8_t(((color & 0b1111100000000000)>>11)*8),uint8_t((color & 0b0000000000011111)*4),uint8_t(((color & 0b0000011111100000)>>5)*8)};
     }
     class ctx{
+            int height;
+            int width;
         public:
             //if you touch this you die
             color* img;
-            int height;
-            int width;
             ctx(int width, int height);
             ctx(ctx& cp);
             ~ctx();
