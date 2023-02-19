@@ -58,7 +58,10 @@ namespace llcd{
                 void push(uint8_t value);
                 bool getBit(uint32_t place,uint8_t bit);
                 uint8_t& operator[](uint32_t place);
+                void print();
+                void printArray();
         };
+
         uint8_t staticDSize(uint32_t value);// 0101101
         //like string view but kinda diffrent
         class PbView{

@@ -1,5 +1,7 @@
 #include "data.hpp"
 #include "exception.hpp"
+#include <fstream>
+#include <iostream>
 
 //lString
 
@@ -18,7 +20,13 @@ llcd::data::dataArray::dataArray(){
     this->data = nullptr;
 }
 llcd::data::dataArray::dataArray(const char* filename){
-    //to-do
+    std::ifstream file_in(filename, std::ios::binary);
+    file_in.seekg(0, file_in.end);
+    size_t file_size = file_in.tellg();
+    file_in.seekg(0, file_in.beg);
+    data = new uint8_t[file_size];
+    file_in.read(reinterpret_cast<char*>(data), file_size);
+    file_in.close();
 };
 llcd::data::dataArray::dataArray(uint8_t* data,uint32_t size){
     this->size = size;
@@ -48,7 +56,10 @@ llcd::data::dataArray::~dataArray(){
     }
 };
 void llcd::data::dataArray::save(const char* filename){
-    //to-do
+    std::ofstream outfile(filename, std::ios::binary);
+    outfile.write(reinterpret_cast<char*>(this->data), size);
+    outfile.flush();
+    outfile.close();
 };
 void llcd::data::dataArray::reSize(uint32_t size){
     if(this->size==size)return;
@@ -63,11 +74,12 @@ void llcd::data::dataArray::reSize(uint32_t size){
     }
     uint8_t* newData = new uint8_t[size];
     for(uint32_t i = 0;i<size;i++){
-        if(this->size<i)newData[i] = this->data[i];
+        if(this->size>i)newData[i] = this->data[i];
         else newData[i] = 0;
     }
     delete [] this->data;
     this->data = newData;
+    this->size = size;
 };
 void llcd::data::dataArray::push(uint8_t value){
     reSize(this->size+1);
@@ -81,9 +93,18 @@ uint8_t& llcd::data::dataArray::operator[](uint32_t place){
     if(place>=this->size)throw llcd::exception(e_outFoBounce_error,"you are trying to access value that is not inside this dataArray");
     return this->data[place];
 };
+void print(){
+    //to-do
+    throw(llcd::exception(0,"print not implemented"));
+}
+void printArray(){
+    //to-do
+    throw(llcd::exception(0,"printArray not implemented"));
+}
 
 //helper function
 
+//tells you how much bytes you need for a number
 uint8_t llcd::data::staticDSize(uint32_t value){
     if(value<2)return 1;
     else{
@@ -112,6 +133,7 @@ void llcd::data::PbView::reset(){
     bit = 0;
     nowValue = data[place];
 };
+//reads one bit
 bool llcd::data::PbView::readBit(){
     bit>>=1;
     if(bit==0){
@@ -121,6 +143,7 @@ bool llcd::data::PbView::readBit(){
     }
     return nowValue&(bit);
 };
+//reads data like 11110 where 110 is 3 and 0 is 1
 uint32_t llcd::data::PbView::readDynamic(){
     uint32_t out = 1;
     while (readBit())
@@ -131,6 +154,7 @@ uint32_t llcd::data::PbView::readDynamic(){
     return out;
     
 };
+//reads data like 10110 where 101(3) is 5 and 0(1) is 1
 uint32_t llcd::data::PbView::readStatic(uint8_t size){
     uint32_t out = 0;
     for(uint8_t i = 0;i<size;i++){
@@ -148,11 +172,13 @@ llcd::data::PbReader::PbReader(dataArray& data):data(data){
 llcd::data::PbReader::PbReader(dataArray data):data(data){
     reset();
 };
+//resets the reading place to begining
 void llcd::data::PbReader::reset(){
     place = 0;
     bit = 0;
     nowValue = data[place];
 };
+//reads one bit
 bool llcd::data::PbReader::readBit(){
     bit>>=1;
     if(bit==0){
@@ -162,6 +188,8 @@ bool llcd::data::PbReader::readBit(){
     }
     return nowValue&(bit);
 };
+// reads sequence like this 1111110 where zero is terminator
+// and returns lengh from 1 to 2^32-2
 uint32_t llcd::data::PbReader::readDynamic(){
     uint32_t out = 1;
     while (readBit())
@@ -172,6 +200,7 @@ uint32_t llcd::data::PbReader::readDynamic(){
     return out;
     
 };
+//reads seqence of bits like 1101101 which lenght you specify
 uint32_t llcd::data::PbReader::readStatic(uint8_t size){
     uint32_t out = 0;
     for(uint8_t i = 0;i<size;i++){
@@ -185,33 +214,39 @@ uint32_t llcd::data::PbReader::readStatic(uint8_t size){
 llcd::data::PbWriter::PbWriter(){
     clear();
 };
+//clears everyting
 void llcd::data::PbWriter::clear(){
     data.reSize(0);
-    bit=0;
+    current = 0;
+    bit=0b10000000;
 };
+//writes exactly one bit
 void llcd::data::PbWriter::writeBit(bool value){
-    bit>>=1;
     if(bit==0){
         bit = 0b10000000;
         data.push(current);
         current = 0;
     }
     if(value)current|=bit;
+    bit>>=1;
 };
+//writes value like 1111111110 where 1 is 0 and 4 is 1110
 void llcd::data::PbWriter::writeDynamic(uint32_t value){
     for(uint32_t i = 0;i<value-1;i++){
         writeBit(true);
     }
-    writeBit(false);
+    if(value!=0)writeBit(false);
 };
+//wites value like 101001 where 3(4) is 100 and 3(5) is 101
 void llcd::data::PbWriter::writeStatic(uint32_t value,uint8_t size){
     for(uint8_t i = 0;i<size;i++){
         writeBit((value>>(size-(1+i)))&1);
     }
 };
+//gives you data you've written
 llcd::data::dataArray llcd::data::PbWriter::exportData(){
     dataArray out = data;
-    out.push(current);
+    if(bit!=0b10000000)out.push(current);
     return out;
 };
 
